@@ -1,0 +1,126 @@
+@use "variables"as *;
+
+
+// Pills filtros
+
+.section-filtros {
+@include flexCenter(column-reverse);
+margin: auto;
+gap: 1.5rem;
+        position: fixed;
+        top: 6rem;
+        left: 2rem;
+
+        .logo-big {
+            @include flexCenter(column);
+
+            img {
+                width: 8rem;
+            }
+        }
+a.mis-favoritos {
+    @include flexCenter(row);
+    gap: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+            font-weight: 400;
+
+    i {
+        color: $light-pink-light;
+    }
+
+    i:hover {
+        color: $light-pink;
+
+    }
+
+    p {
+        color: var(--text-general);
+    }
+}
+a.mis-favoritos:hover {
+                font-weight: 700;
+
+                i {
+        transform: scale(1.2);
+        transition: 0.25s;
+                }
+
+}
+
+.pills-filtros {
+    @include flexCenter(column);
+                    gap: 1.5rem;
+
+    .filtro {
+        @include flexCenter(column);
+
+        h3 {
+            font-size: 1rem;
+            color: var(--text-general);
+        }
+
+        .filtros-botones {
+            @include flexCenter(row);
+                    flex-wrap: wrap;
+                    gap: 1rem;
+        }
+        
+    }
+}
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+    // HABILIDADES TABLET
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    // Pills filtros
+.section-filtros {
+    @include flexCenter(row);
+    gap: 5rem;
+
+.pills-filtros {
+    @include flexCenter(column);
+        align-items: flex-start;
+            gap: 1rem;
+
+    .filtro {
+        gap: 24px;
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        
+    }
+}
+
+        .logo-big {
+
+            img {
+                width: 13rem;
+            }
+        }
+
+a.mis-favoritos {
+    @include flexCenter(column);
+    gap: 2rem;
+
+    p {
+        font-size: 2rem;
+    }
+
+    i {
+    font-size: 4rem;
+    }
+
+}
+
+}
+}
