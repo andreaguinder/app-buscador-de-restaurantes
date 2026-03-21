@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
-  --bg-body: url('/img/bg-light-tiny.png') center/cover no-repeat scroll;
-  --bg-header: url('/img/header-theme-claro-ty.png') top no-repeat;
+  --bg-body: url('../img/bg-light-tiny.png') center/cover no-repeat scroll;
+  --bg-header: url('../img/header-theme-claro-ty.png') top no-repeat;
   --bg-header-footer: rgb(5, 75, 24);
   --line: rgb(255, 255, 255);
   --blanco-negro: rgb(255, 255, 255);
@@ -21,18 +21,12 @@
   --border-card: rgb(5, 75, 24);
   --title-card: rgb(0, 0, 0);
   --bg-btn-hover: rgb(31, 106, 51);
-  --img-card-front: url("../img/img-front.png");
-  --img-card-graph: url("../img/img-graph.png");
-  --img-card-social: url("../img/img-social.png");
-  --bg-contacto-desk: url('../img/desk-contacto-white-ty.png');
-  --bg-contacto-mob: url('../img/mob-contacto-light-ty.png');
-  --bg-contacto-tablet: url('../img/bg-tablet-white-ty.png');
 }
 
 [data-theme=dark] {
   --bg-body: rgb(40, 40, 48);
   --blanco-negro: rgb(0, 0, 0);
-  --bg-header: url('/img/header-theme-oscuro-ty.png') top no-repeat;
+  --bg-header: url('../img/header-theme-oscuro-ty.png') top no-repeat;
   --bg-header-footer: rgb(1, 36, 10);
   --line: rgb(31, 106, 51);
   --text-botones: rgb(0, 0, 0);
@@ -51,12 +45,6 @@
   --title-menu: rgb(31, 106, 51);
   --text-botones: rgb(255, 255, 255);
   --bg-btn-hover: rgb(31, 106, 51);
-  --img-card-front: url("../img/img-front-dark.png");
-  --img-card-graph: url("../img/img-graph-dark.png");
-  --img-card-social: url("../img/img-social-dark.png");
-  --bg-contacto-desk: url('../img/desk-contacto-new-ty.png');
-  --bg-contacto-mob: url('../img/mob-contact-new-ty.png');
-  --bg-contacto-tablet: url('../img/bg-tablet-dark-ty.png');
 }
 
 .section-filtros {

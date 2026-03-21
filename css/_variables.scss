@@ -30,10 +30,10 @@ $btn-square: rgb(214, 233, 219);
 
     // Body
 
-    --bg-body: url('/img/bg-light-tiny.png') center/cover no-repeat scroll;
+    --bg-body: url('../img/bg-light-tiny.png') center/cover no-repeat scroll;
 
     // Header & Footer
-    --bg-header: url('/img/header-theme-claro-ty.png') top no-repeat;
+    --bg-header: url('../img/header-theme-claro-ty.png') top no-repeat;
     --bg-header-footer: #{$dark-pink};
     --line: #{$white};
     --blanco-negro: #{$white};
@@ -61,15 +61,6 @@ $btn-square: rgb(214, 233, 219);
     --title-card: #{$black};
     --bg-btn-hover: #{$light-pink};
 
-    --img-card-front: #{url('../img/img-front.png')};
-    --img-card-graph: #{url('../img/img-graph.png')};
-    --img-card-social: #{url('../img/img-social.png')};
-
-    // Contacto
-
-    --bg-contacto-desk: url('../img/desk-contacto-white-ty.png');
-    --bg-contacto-mob: url('../img/mob-contacto-light-ty.png');
-    --bg-contacto-tablet: url('../img/bg-tablet-white-ty.png');
 }
 
 
@@ -83,7 +74,7 @@ $btn-square: rgb(214, 233, 219);
         --blanco-negro: #{$black};
 
     // Header
-    --bg-header: url('/img/header-theme-oscuro-ty.png') top no-repeat;
+    --bg-header: url('../img/header-theme-oscuro-ty.png') top no-repeat;
     --bg-header-footer: #{$dark-pink-dark};
     --line: #{$light-pink};
     --text-botones: #{$black};
@@ -110,14 +101,4 @@ $btn-square: rgb(214, 233, 219);
     --title-menu: #{$light-pink};
         --text-botones: #{$white};
     --bg-btn-hover: #{$light-pink};
-
-    --img-card-front: #{url('../img/img-front-dark.png')};
-    --img-card-graph: #{url('../img/img-graph-dark.png')};
-    --img-card-social: #{url('../img/img-social-dark.png')};
-
-    // Contacto
-
-    --bg-contacto-desk: url('../img/desk-contacto-new-ty.png');
-    --bg-contacto-mob: url('../img/mob-contact-new-ty.png');
-    --bg-contacto-tablet: url('../img/bg-tablet-dark-ty.png');
 }
