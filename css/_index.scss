@@ -5,11 +5,13 @@
 
 .section-filtros {
 @include flexCenter(column-reverse);
+width: 100%;
 margin: auto;
 gap: 1.5rem;
+/*
+background: var(--bg-body);*/
         position: fixed;
-        top: 6rem;
-        left: 2rem;
+        top: 8rem;
 
         .logo-big {
             @include flexCenter(column);
@@ -18,35 +20,10 @@ gap: 1.5rem;
                 width: 8rem;
             }
         }
-a.mis-favoritos {
-    @include flexCenter(row);
-    gap: 2rem;
-    font-size: 2rem;
-    text-decoration: none;
-            font-weight: 400;
 
-    i {
-        color: $light-pink-light;
-    }
-
-    i:hover {
-        color: $light-pink;
-
-    }
-
-    p {
-        color: var(--text-general);
-    }
-}
-a.mis-favoritos:hover {
-                font-weight: 700;
-
-                i {
-        transform: scale(1.2);
-        transition: 0.25s;
-                }
-
-}
+        h2 {
+            display: none;
+        }
 
 .pills-filtros {
     @include flexCenter(column);
@@ -70,7 +47,35 @@ a.mis-favoritos:hover {
 }
 }
 
+.mis-favoritos {
+    @include flexCenter(row);
+    gap: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+            font-weight: 400;
+            margin-top: 15rem;
 
+    i {
+        color: $light-pink-light;
+    }
+
+
+
+    p {
+        color: var(--text-general);
+    }
+}
+.mis-favoritos:hover {
+                font-weight: 700;
+
+                i {
+        transform: scale(1.2);
+        transition: 0.25s;
+                color: $light-pink;
+
+                }
+
+}
 
 @media only screen and (min-width: 768px) {
 
@@ -83,7 +88,12 @@ a.mis-favoritos:hover {
     // Pills filtros
 .section-filtros {
     @include flexCenter(row);
-    gap: 5rem;
+    gap: 1rem;
+
+            h2 {
+            display: block;
+        }
+
 
 .pills-filtros {
     @include flexCenter(column);
@@ -108,19 +118,25 @@ a.mis-favoritos:hover {
             }
         }
 
-a.mis-favoritos {
+
+
+}
+
+.mis-favoritos {
     @include flexCenter(column);
+    align-items: flex-start;
     gap: 2rem;
+        align-items: flex-start;
+        max-width: 1196.04px;
+        margin: 19rem auto 0rem;
 
     p {
         font-size: 2rem;
     }
 
     i {
-    font-size: 4rem;
+    font-size: 2rem;
     }
-
-}
 
 }
 }

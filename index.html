@@ -72,31 +72,44 @@
 
   <header id="inicio">
     <div class="container-nav">
-      <div class="logo">
-        <i class="fa-solid fa-magnifying-glass"></i>
+      <div class="buscador">
+        <form action="/buscar" method="GET">
+  <input type="search" id="mi-busqueda" name="q" placeholder="Escribí acá...">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</form>
       </div>
 
-      <div class="theme-switch-wrapper">
+
+
+      <nav id="site__nav" class="site__nav">
+        <ul>
+          <li><a href="#mis-favoritos" class="btn-link"><span>Mis favoritos</span><i class="fa-solid fa-heart"></i></a></li>
+          <li><a href="#modal-inicio-sesion" class="btn active">Iniciar sesión</a></li>
+
+                        <div class="theme-switch-wrapper">
         <input type="checkbox" id="theme-checkbox" class="theme-checkbox">
         <label for="theme-checkbox" class="theme-label" aria-label="Cambiar modo de color">
           <i class="fas fa-sun"></i>
           <i class="fas fa-moon"></i>
         </label>
       </div>
-
-      <nav id="site__nav" class="site__nav">
-        <ul>
-          <li><a href="#estilos-cocina">Iniciar sesión</a></li>
-          <li><a href="#menus-especiales">Mis favoritos</a></li>
         </ul>
-      </nav>
 
-      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
-        <div class="menu-hamburguesa"></div>
-      </button>
+
+      </nav>
     </div>
   </header>
 
+  <section>
+
+
+  <div class="buscador-mobile">
+        <form action="/buscar" method="GET">
+  <input type="search" id="mi-busqueda" name="q" placeholder="Escribí acá...">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</form>
+      </div>
+        </section>
 
   <main>
 
@@ -106,44 +119,48 @@
 
     <section>
 
-            <h2>Descubrí nuestros filtros, seleccioná y combiná<i class="fa-solid fa-filter"></i></h2>
+
       <div class="section-filtros">
-      <div class="pills-filtros">
-        <div class="filtro">
-          <div class="filtros-botones">
-            <h3>Estilo de cocina</h3>
-            <div class="btn">Parrilla / Asado</div>
-            <div class="btn">Pastas / Trattoria</div>
-            <div class="btn">Minutas</div>
-            <div class="btn">Pizzería</div>
-            <div class="btn">Cafetería / Brunch</div>
+        <div class="pills-filtros">
+          <h2>Descubrí nuestros filtros, seleccioná y combiná<i class="fa-solid fa-filter"></i></h2>
+          <div class="filtro">
+            <div class="filtros-botones">
+              <h3>Estilo de cocina</h3>
+              <div class="btn active">Todos</div>
+              <div class="btn">Parrilla / Asado</div>
+              <div class="btn">Pastas / Trattoria</div>
+              <div class="btn">Minutas</div>
+              <div class="btn">Pizzería</div>
+              <div class="btn">Cafetería / Brunch</div>
+            </div>
           </div>
-        </div>
 
-        <div class="filtro">
-          <div class="filtros-botones">
-            <h3>Menús especiales</h3>
-            <div class="btn">Menú infantil</div>
-            <div class="btn">Sin TACC</div>
-            <div class="btn">Menú Ejecutivo</div>
+          <div class="filtro">
+            <div class="filtros-botones">
+              <h3>Menús especiales</h3>
+              <div class="btn active">Todos</div>
+              <div class="btn">Menú infantil</div>
+              <div class="btn">Sin TACC</div>
+              <div class="btn">Menú Ejecutivo</div>
+            </div>
           </div>
-        </div>
 
-        <div class="filtro">
-          <div class="filtros-botones">
-            <h3>Perfil del lugar</h3>
-            <div class="btn">Familiar</div>
-            <div class="btn">Pet Friendly</div>
-            <div class="btn">Apto para trabajar</div>
-            <div class="btn">Cervecería / Bar</div>
+          <div class="filtro">
+            <div class="filtros-botones">
+              <h3>Perfil del lugar</h3>
+              <div class="btn active">Todos</div>
+              <div class="btn">Familiar</div>
+              <div class="btn">Pet Friendly</div>
+              <div class="btn">Apto para trabajar</div>
+              <div class="btn">Cervecería / Bar</div>
+            </div>
           </div>
-        </div>
 
-      </div>
-      <div class="logo-big">
-        <img src="./img/logo-fondo-blanco.png" alt="Logo Qué vamos a comer?">
-      </div>
-      <!----
+        </div>
+        <div class="logo-big">
+          <img src="./img/logo-fondo-blanco.png" alt="Logo Qué vamos a comer?">
+        </div>
+        <!----
       <a href="#mis-favoritos" class="mis-favoritos">
         <i class="fa-solid fa-heart"></i>
         <p>Mis favoritos</p>
@@ -151,50 +168,20 @@
       </div>
     </section>
 
-    <!----
-    <div class="separador"></div>
 
-    <section id="estilos-cocina">
-      <h2>Estilo de cocina, conseguí lo que buscás<i class="fa-solid fa-fire-burner"></i></h2>
-    </section>
 
-    <div class="separador"></div>
-
-    <section id="menus-especiales">
-      <h2>Menús especiales para el momento del día que necesites<i class="fa-solid fa-utensils"></i></h2>
-    </section>
-
-    <div class="separador"></div>
-
-    <section id="perfil-lugar">
-      <h2>Perfil del lugar, acorde a tus gustos<i class="fa-solid fa-address-book"></i></h2>
-    </section>
-
-        <div class="separador"></div>
-
-    <section id="mis-favoritos">
+    <section id="mis-favoritos" class="mis-favoritos">
+              <div class="separador"></div>
       <h2>Mis favoritos de siempre<i class="fa-solid fa-heart"></i></h2>
     </section>
-  -->
 
 
-  
+
+
   </main>
 
   <!--- Footer --->
   <footer>
-    <div>
-      <a target="_blank" class="github" href="https://github.com/andreaguinder" aria-label="Ir a mi perfil de GitHub"><i
-          class="fab fa-github" aria-hidden="true"></i></a>
-      <a target="_blank" class="behance" href="https://www.behance.net/andreaguinder"
-        aria-label="Ir a mi perfil de Behance"><i class="fa-brands fa-square-behance" aria-hidden="true"></i></a>
-      <a target="_blank" class="linkedin" href="https://www.linkedin.com/in/andrea-guinder/"
-        aria-label="Ir a mi perfil de LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-    </div>
-    <div>
-      <p>andreabelen.guinder@gmail.com</p>
-      <p>Residente en Buenos Aires, Argentina </p>
-    </div>
     <div>
       <p>
         Diseño y Desarrollo por Andrea
