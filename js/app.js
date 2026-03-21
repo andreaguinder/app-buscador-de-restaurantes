@@ -30,3 +30,52 @@ document.addEventListener('DOMContentLoaded', () => {
     yearSpan.textContent = new Date().getFullYear();
 
 });
+
+let modalInicioSesion = () => {
+
+
+    let modalContainerSesion = document.querySelector(".modal-container-sesion");
+    let btnIniciarSesion = document.querySelector("#btn-iniciar-sesion");
+    let btnClose = document.querySelector(".btn-close");
+
+    let btnIngresar = document.querySelector("#ingresar");
+    let buttonLoginNo = document.querySelector(".button-login-no");
+    let buttonLoginSi = document.querySelector(".button-login-si");
+
+    btnIniciarSesion.addEventListener("click", () => {
+        modalContainerSesion.classList.remove("modal-invisible");
+
+    });
+
+    btnClose.addEventListener("click", () => {
+        modalContainerSesion.classList.add("modal-invisible");
+    });
+
+    let formModalInicio = document.querySelector("#form-modal-inicio");
+
+    formModalInicio.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let usuarioNombre = document.querySelector("#usuario").value;
+        let password = document.querySelector("#password").value;
+
+        if (usuarioNombre != "" && password != "") {
+
+
+            modalContainerSesion.classList.add("modal-invisible");
+            buttonLoginNo.classList.add("invisible");
+            buttonLoginSi.classList.remove("invisible");
+            buttonLoginSi.innerHTML = `<span class="nombre-usuario">${usuarioNombre}</span>`;
+
+        }
+    });
+
+
+
+
+
+
+
+};
+
+modalInicioSesion();

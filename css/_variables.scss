@@ -49,6 +49,8 @@ $btn-square: rgb(214, 233, 219);
     --text-botones: #{$black};
     --btn-square: #{$btn-square};
 
+    --nombre-usuario: #{rgba($light-pink, 0.45)};
+
     // Cards
 
     --bg-card: #{rgba($light-pink-light, 0.4)};
@@ -93,6 +95,9 @@ $btn-square: rgb(214, 233, 219);
     --botones: #{$white};
     --botones-bg: #{rgba($light-pink, 0.3)};
     --btn-square: #{$black-dark-cards};
+
+
+        --nombre-usuario: #{rgba($light-pink, 0.6)};
 
     // Cards
 

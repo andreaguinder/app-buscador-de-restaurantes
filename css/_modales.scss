@@ -1,0 +1,110 @@
+@use "variables"as *;
+
+.modal-visible {
+    display: block;
+}
+
+.modal-invisible {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); // Color oscuro semitransparente
+    backdrop-filter: blur(4px); // Esto hace el efecto de "vidrio" (esmerilado)
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; // Para que tape hasta el header fixed que tenés
+}
+
+.modal {
+    @include flexCenter(column);
+    gap: 1rem;
+    width: 19rem;
+    border-radius: 1rem;
+    background-color: var(--blanco-negro);
+    padding: 2rem 2rem 3rem;
+    box-shadow: 0 10px 25px rgb(from var(--bg-black) r g b / 0.1) 0 20px 48px rgb(from var(--bg-black) r g b / 0.2);
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-general);
+        margin-bottom: 1rem
+    }
+
+    form {
+
+        div {
+            @include flexCenter(column);
+            align-items: flex-start;
+            gap: 0.5rem;
+
+            label {
+                font-size: 1.25rem;
+                color: var(--text-general);
+                    padding-left: 0.35rem;
+            }
+
+        }
+
+        .password {
+            margin-top: 1rem;
+        }
+
+        input {
+            padding: 0.75rem 1rem;
+            border-radius: 5rem;
+            min-width: 16rem;
+        }
+
+        .btn {
+            border: none;
+            width: 100%;
+            margin-top: 2rem;
+            padding: 0.65rem 1rem;
+        }
+    }
+
+    .btn-close {
+        position: absolute;
+            transform: translate(7.5rem, -9rem);
+
+        i {
+            font-size: 2rem;
+            color: var(--text-general);
+        }
+    }
+
+
+}
+
+#modal-inicio-sesion {}
+
+
+@media only screen and (min-width: 768px) {
+
+    .modal {
+    width: 28rem;
+
+
+    form {
+
+        input {
+            min-width: 20rem;
+        }
+    }
+
+    .btn-close {
+        transform: translate(11rem, -8.5rem);
+    }
+
+
+}
+
+}

@@ -72,10 +72,10 @@
                 font-size: 1rem;
                 color: var(--text-general);
 
-                    padding: 0rem 0rem 0.35rem 1rem;
+
     flex-wrap: nowrap;
 
-        padding: 0rem 0rem 0.35rem 1rem;
+
     flex-wrap: nowrap;
 
     flex: 0 0 auto;
@@ -240,6 +240,9 @@
         @include flexCenter(row);
         gap: 1rem;
         max-width: 1400px;
+        position: relative;
+        top: 0;
+        margin-top: 0;
 
 
         h2 {
@@ -299,7 +302,7 @@
             align-items: flex-start;
             gap: 2rem;
             align-items: flex-start;
-            margin: 22rem auto 0rem;
+            margin: 0rem;
             max-width: 1551.79px;
 
             h2 {

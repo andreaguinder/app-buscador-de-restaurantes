@@ -1,5 +1,6 @@
 @use "variables"as *;
 @use "index";
+@use "modales";
 
 // ESTILOS GENERALES MOB
 
@@ -81,6 +82,14 @@ i {
     margin: 0rem;
 }
 
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none !important;
+}
+
 .hidden-xs {
     display: none;
 }
@@ -101,6 +110,17 @@ i {
     margin: 8rem auto 2.5rem;
 }
 
+.nombre-usuario {
+            background-color: var(--nombre-usuario);
+    color: var(--text-botones);
+    padding: 0.3rem 1rem 0.5rem;
+    height: auto;
+    border-radius: 60px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    font-weight: 600;
+    @include flexCenter(column);
+}
 
 %btn-general {
         background-color: var(--botones-bg);
@@ -233,14 +253,11 @@ header {
 
                 li {
 
-                                    span {
+                                    .title-favs {
                     display: none;
 
                 }
 
-                    .btn {
-                                                    padding: 0.5rem 1rem;
-                    }
                     .btn-link {
                         color: var(--text-botones);
                         @include flexCenter(row);
@@ -263,6 +280,10 @@ header {
 
                 li:last-child {
                     border-bottom: none;
+                }
+
+                .btn {
+                        padding: 0.5rem 1rem;
                 }
             }
         }
@@ -424,7 +445,7 @@ header {
                     }
 
 
-                        span {
+                        .title-favs {
                             display: block;
                         }
 
@@ -437,12 +458,6 @@ header {
                             font-size: 1.2rem;
                             font-weight: 700;
 
-                            &:hover,
-                            &:focus,
-                            &.active {
-                                color: var(--accent) !important;
-                                background: transparent !important;
-                            }
                         }
                     }
                 }
@@ -581,7 +596,7 @@ header {
                     }
 
 
-                        span {
+                        .title-favs {
                             display: block;
                         }
 
@@ -594,13 +609,6 @@ header {
                             margin: 0;
                             font-size: 1.2rem;
                             font-weight: 700;
-
-                            &:hover,
-                            &:focus,
-                            &.active {
-                                color: var(--accent) !important;
-                                background: transparent !important;
-                            }
                         }
                     }
                 }
