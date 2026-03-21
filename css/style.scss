@@ -101,25 +101,13 @@ i {
     margin: 8rem auto 2.5rem;
 }
 
-.titulo-con-boton {
-    @include flexCenter(row);
-    justify-content: space-between;
-    width: 100%;
-    padding: 1rem 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--text-general);
-    margin-top: 0rem !important;
-}
 
 %btn-general {
-        background-color: rgb(from var(--botones-bg) r g b / 0.3);
+        background-color: var(--botones-bg);
     color: var(--text-botones);
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;
     height: auto;
     border-radius: 60px;
-    border: 0.25rem solid $light-pink-light;
     font-size: 1rem;
     text-decoration: none;
     font-weight: 600;
@@ -136,30 +124,9 @@ i {
 .btn.active {
     color: $white;
     background-color: var(--bg-btn-hover);
-        border: 0.25rem solid var(--bg-btn-hover);
 }
 
-.btn-square-red {
-    color: var(--botones);
-    cursor: pointer;
-    font-family: var(--font-general);
-    font-size: 2rem;
-    display: block;
-}
 
-.btn-square-mas {
-    color: var(--botones);
-    cursor: pointer;
-    font-family: var(--font-general);
-    font-size: 1.25rem;
-    font-weight: 700;
-    transform: translate(16.6rem, -1rem);
-    border: 1.5px solid var(--border-card);
-    padding: 0.2rem 0.5rem;
-    border-radius: 10px;
-    display: block;
-    background-color: var(--btn-square);
-}
 
     .fa-circle-user {
         margin-bottom: 0.25rem !important;
@@ -268,8 +235,12 @@ header {
 
                                     span {
                     display: none;
+
                 }
 
+                    .btn {
+                                                    padding: 0.5rem 1rem;
+                    }
                     .btn-link {
                         color: var(--text-botones);
                         @include flexCenter(row);
@@ -309,7 +280,8 @@ input {
     min-width: 16rem;
 }
 i {
-    transform: translateX(-2.5rem);
+    transform: translate(-2rem, 0.6rem);
+    position: absolute;
 }
 }
 // FOOTER MOB
@@ -321,33 +293,15 @@ footer {
     background-position-x: center;
     width: 100%;
     color: $white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    min-height: 16rem;
+    @include flexCenter(column);
+    min-height: 8rem;
     padding: 1rem 0rem;
     position: absolute;
     bottom: 0;
 
-    div:first-child {
-        @include flexCenter(row);
-        gap: 2rem;
-
-        i {
-            font-size: 2.25rem;
-        }
-    }
-
-    div:nth-child(2),
-    div:nth-child(3) {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 320px;
+    div {
+            @include flexCenter(column);
+    gap: 1rem;
     }
 
     p {
@@ -356,266 +310,20 @@ footer {
         font-size: 1rem;
         line-height: 1.35rem;
         padding: 0rem 1rem;
-    }
 
-    .fab,
-    .fa-brands,
-    .fa-square-behance,
-    .behance {
-        font-size: 1.8rem;
+        a {
+                    text-align: center;
         color: $white;
-    }
-
-    .fab:hover,
-    .fa-brands:hover,
-    .fa-square-behance:hover,
-    .behance:hover {
-        color: var(--title-menu);
-    }
-}
-
-// CARDS PRIMARY
-
-.card-primary {
-    min-height: 24rem;
-    @include flexCenter(column);
-    justify-content: flex-start;
-    background-color: var(--bg-card);
-    backdrop-filter: blur(2rem);
-    border-top-right-radius: 28px;
-    border-bottom-left-radius: 28px;
-    position: relative;
-    width: fit-content;
-    max-width: 340px;
-    min-width: 340px;
-
-
-    &::before {
-        content: '';
-        position: absolute;
-        min-height: -webkit-fill-available;
-        width: 100%;
-        overflow: hidden;
-        background:
-            linear-gradient(to right, var(--accent) 0.3rem, transparent 0.3rem) 0 0,
-            linear-gradient(to bottom, var(--accent) 0.3rem, transparent 0.3rem) 0 0,
-            linear-gradient(to left, var(--accent) 0.3rem, transparent 0.3rem) 100% 100%,
-            linear-gradient(to top, var(--accent) 0.3rem, transparent 0.3rem) 100% 100%;
-        background-repeat: no-repeat;
-        background-size: 7.3rem 4.3rem;
-        filter: drop-shadow(0 0 0.5rem var(--accent));
-        border-radius: 2px;
-    }
-
-    .btn {
-        margin-top: 1rem;
-    }
-
-    i {
-        color: var(--text-general);
-        font-size: 1.75rem;
-    }
-
-    .fa-github {
-        padding-bottom: 0.4rem;
-    }
-
-    .titulo-sin-boton {
-        color: var(--title-card);
-        text-align: center;
-        padding: 2rem 0.5rem;
-        font-size: 1.2rem;
-    }
-
-    img {
-        width: 100%;
-        min-height: 125px;
-    }
-
-    p {
-        padding: 1rem 1.4rem 2rem 1.4rem;
-        margin: 0rem;
         font-size: 1rem;
-        color: var(--text-general);
-        font-family: var(--font-general);
-                max-width: 20rem;
-    }
-
-    %card-primary-habilidad-img {
-        width: 85%;
-        min-height: 127px;
-        object-fit: cover;
-        margin: -0.5rem auto 0.5rem;
-        ;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        padding-top: 1rem;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .img-front {
-        background-image: var(--img-card-front);
-        @extend %card-primary-habilidad-img;
-    }
-
-    .img-social {
-        background-image: var(--img-card-social);
-        @extend %card-primary-habilidad-img;
-        margin: -1rem auto 0rem;
-    }
-
-    .img-graph {
-        background-image: var(--img-card-graph);
-        @extend %card-primary-habilidad-img;
-        min-height: 118px;
-        margin: -1rem auto 0rem;
-    }
-}
-
-// SWIPER CARDS SECONDARY
-
-.swiper-cards-secondary {
-    width: 100%;
-    margin: 0 auto;
-
-    .swiper {
-        width: 320px;
-        height: auto;
-        overflow: hidden;
-        padding: 0rem 0 3.75rem;
-        transition: height 0.6s ease-in-out;
-
-        .swiper-slide {
-            min-height: 7rem;
-            height: auto;
-            width: 100%;
-            display: flex;
-        }
-
-        .swiper-button-prev {
-            left: 4.35rem;
-        }
-
-        .swiper-button-next {
-            left: 14.5rem;
+        line-height: 1.35rem;
+        font-weight: 600;
+        text-decoration: none;
         }
     }
 }
 
-.swiper-horizontal>.swiper-pagination-bullets {
-    top: auto;
-    bottom: 10px;
 
-    .swiper-pagination-bullet {
-        background-color: var(--title-card);
-    }
-}
 
-.swiper-pagination-bullet-active {
-    width: 20px;
-    border-radius: 30px;
-    background-color: var(--accent);
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    top: auto !important;
-    bottom: 5px !important;
-    color: var(--title-card);
-    width: 1.5rem;
-    height: 1.5rem;
-    z-index: 10;
-}
-
-// ESTILOS CARDS SECONDARY
-
-.cards-expandibles {
-    .card.card-secondary {
-        padding: 1rem 0rem 0rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        background-color: var(--bg-card-light);
-        backdrop-filter: blur(10px);
-        border: 2px solid var(--border-card);
-        box-sizing: border-box;
-        transition: all 0.6s ease-in-out;
-        width: 100%;
-        max-width: 320px;
-        border-top-right-radius: 28px;
-        border-bottom-left-radius: 28px;
-        min-height: 166px;
-
-        .titulo-con-boton {
-            padding: 0.5rem 0rem 0rem;
-        }
-    }
-
-    .expandible-wrapper {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.6s ease-in-out;
-
-        &.abierto {
-            max-height: 700px;
-        }
-    }
-
-    &.card.card-secondary-abierta {
-        height: auto !important;
-    }
-
-    .titulo {
-        font-size: 1.125rem;
-        color: var(--text-card);
-        margin: 1rem 2rem 0rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
-    }
-
-    .subtitulo {
-        color: var(--text-general);
-        font-size: 1rem;
-        line-height: 1.1rem;
-        margin: 1rem 0rem;
-        width: 295px;
-        padding-left: 2rem;
-    }
-
-    .div-expandible {
-        width: 290px;
-        height: 1.5rem;
-    }
-
-    i {
-        color: var(--text-card);
-    }
-
-    .fa-github,
-    .fa-circle-user {
-        font-size: 1.60rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .texto-info {
-        padding-top: 1rem;
-        padding-left: 2rem;
-        width: 295px;
-        font-size: 1rem;
-        line-height: 1.1rem;
-        color: var(--text-general);
-    }
-
-    .card-secondary .btn {
-        margin-left: 2rem;
-        margin-top: 1rem;
-    }
-}
 
 @media only screen and (min-width: 768px) {
 
@@ -646,57 +354,114 @@ footer {
         }
     }
 
-    // MENU TABLET
-    header .container-nav .theme-switch-wrapper {
-        order: 2;
-        position: absolute;
-        left: 50%;
-        transform: translateX(200px);
+header {
+            background: var(--bg-header);
+        min-height: 4.5rem;
+        padding: 0;
+        position: fixed;
+        border-bottom: 2px solid var(--accent);
+
+        .container-nav {
+            width: 100%;
+            padding: 0rem 3rem;
+            gap: 0;
+            display: flex;
+            justify-content: space-between;
+
+
+            .buscador {
+                display: block;
+                
+                input {
+                        padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    min-width: 16rem;
+                }
+
+                i {
+    transform: translate(-2rem, 0.6rem);
+    position: absolute;
+}
+            }
+
+            .theme-switch-wrapper {
+                order: 3;
+                transform: none;
+                position: static;
+            }
+
+            .site__nav {
+                order: 2;
+                height: 100%;
+                position: static;
+                clip-path: none;
+                display: flex;
+                align-items: center;
+                transform: none;
+                padding: 0;
+                background: none;
+                gap: 2rem;
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 2.5rem;
+                    border: none;
+                    margin: 0;
+                    padding: 0;
+                    background: transparent;
+                    width: auto;
+
+                    li {
+                        border: none;
+                                            i {
+                        margin-left: 1rem;
+                    }
+
+                                        i {
+                        margin-left: 0.5rem;
+                    }
+
+
+                        span {
+                            display: block;
+                        }
+
+                        .btn {
+                            font-size: 1.1rem;
+                        }
+                        .btn-link,
+                        p {
+                            margin: 0;
+                            font-size: 1.2rem;
+                            font-weight: 700;
+
+                            &:hover,
+                            &:focus,
+                            &.active {
+                                color: var(--accent) !important;
+                                background: transparent !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
     }
 
-    // FOOTER TABLET
     footer {
-        flex-direction: row;
-        min-height: 7rem;
-        gap: 0.25rem;
+        min-height: 4rem;
 
         div {
-            gap: 0.5rem;
+            flex-direction: row;
+        gap: 0rem;
+
+        & p:nth-child(2) {
+            padding: 0rem;
         }
-
-        p {
-                padding: 0rem 4px;
-        }
-
-        div:first-child {
-                gap: 1rem;
-    margin-left: 0.5rem;
-        }
-    }
-
-    // SWIPER TABLET
-    .swiper-cards-secondary .swiper {
-        width: 664px;
-        margin-top: 1rem;
-
-        .card {
-            width: 320px;
-        }
-
-        .swiper-button-prev {
-            left: 15rem;
-        }
-
-        .swiper-button-next {
-            left: 25rem;
-        }
-    }
-
-    // CARD SECONDARY TABLET
-    .cards-expandibles {
-        .card.card-secondary {
-            width: 320px;
-            justify-content: flex-start;
         }
     }
 }
@@ -771,7 +536,8 @@ footer {
                 }
 
                 i {
-    transform: translateX(-2.5rem);
+    transform: translate(-2rem, 0.6rem);
+    position: absolute;
 }
             }
 
@@ -811,7 +577,7 @@ footer {
                     }
 
                                         i {
-                        margin-left: 1.75rem;
+                        margin-left: 0.5rem;
                     }
 
 
@@ -821,6 +587,7 @@ footer {
 
                         .btn {
                             font-size: 1.1rem;
+                            padding: 0.5rem 1rem;
                         }
                         .btn-link,
                         p {
@@ -856,8 +623,18 @@ footer {
     footer {
         width: 100%;
         @include flexCenter(row);
+        justify-content: flex-end;
         gap: 5rem;
-        min-height: 5rem;
+        min-height: 4rem;
+
+        div {
+            flex-direction: row;
+            margin-right: 3rem;
+
+                    & p:nth-child(2) {
+            padding: .5rem;
+        }
+        }
 
         p {
             text-align: left;
@@ -866,136 +643,6 @@ footer {
             padding: 0.25rem 0.5rem 0rem;
         }
 
-        div:first-child {
-        gap: 2rem;
-        margin-left: 0rem;
-        }
-
-        div:nth-child(2),
-        div:nth-child(3) {
-            display: flex;
-            gap: 0rem;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        div:nth-child(3) {
-            width: 400px;
-        }
-
-
-        .fab,
-        .fa-brands,
-        .fa-square-behance,
-        .behance {
-            font-size: 1.8rem;
-            color: white;
-
-            &:hover {
-                color: var(--title-menu);
-            }
-        }
     }
 
-    // CARDS PRIMARY DESKTOP
-    .card-primary {
-        color: $white;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        min-height: 24rem;
-        width: fit-content;
-            max-width: 320px;
-            min-width: 320px;
-
-        .titulo-sin-boton {
-            text-align: center;
-            font-size: 1.3rem;
-            margin: 0rem auto;
-            padding: 2rem 1rem;
-        }
-
-        p {
-            padding: 1rem 1.5rem 0rem 1.5rem;
-            margin-left: 0rem;
-        }
-
-        &::before {
-            width: 100%;
-            min-height: -webkit-fill-available;
-            top: 0;
-        }
-
-        .btn {
-            margin-top: 1rem;
-        }
-    }
-
-    %card-primary-habilidad-img {
-        min-height: 122px;
-        object-fit: cover;
-    }
-
-    .img-front,
-    .img-graph,
-    .img-social {
-        min-height: 200px;
-        width: 90%;
-    }
-
-    .img-graph {
-        width: 93%;
-    }
-
-    .card-primary-habilidad.design::before,
-    .card-primary-habilidad.social::before {
-        min-height: -webkit-fill-available;
-        width: 100%;
-    }
-
-    // CARDS SECONDARY DESKTOP
-    .cards-expandibles {
-        .card-secondary {
-
-            .subtitulo {
-                color: var(--text-general);
-                width: 295px;
-            }
-
-            .texto-info {
-                padding-top: 1rem;
-                font-size: 1rem;
-                width: 295px;
-            }
-
-            .titulo {
-                padding: 0rem 0rem 0.5rem 2rem;
-                margin-left: 0rem;
-                margin-right: 0rem;
-            }
-
-
-            .subtitulo {
-                width: 295px;
-            }
-        }
-
-        .card.card-secondary .titulo-con-boton {
-                    padding: 0.5rem 2rem 0rem;
-        }
-    }
-
-    // SWIPER DESKTOP
-    .swiper-cards-secondary .swiper {
-        width: 1024px;
-
-        .swiper-button-prev {
-            left: 26rem;
-        }
-
-        .swiper-button-next {
-            left: 37rem;
-        }
-    }
 }
