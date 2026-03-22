@@ -8,9 +8,6 @@
     width: 100%;
     margin: auto;
     gap: 1rem;
-    position: fixed;
-    top: 8.5rem;
-
     .logo-big {
         @include flexCenter(column);
 
@@ -26,6 +23,8 @@
     .pills-filtros {
         @include flexCenter(column);
         gap: 0.5rem;
+
+
 
         width: 100%;
 
@@ -64,8 +63,16 @@
                     flex: 0 0 auto;
                     scroll-snap-align: start;
                     white-space: nowrap;
-
+                    opacity: 0.8;
                 }
+
+                .btn:hover {
+                    opacity: 1;
+                }
+
+                .btn.active {
+                        opacity: 1;
+                    }
 
                             h3 {
                 display: block;
@@ -254,8 +261,7 @@
             @include flexCenter(column);
             align-items: flex-start;
             gap: 1rem;
-            width: 75%;
-            max-width: 950px;
+            width:100%;
 
             .filtro {
                 gap: 0.25rem;

@@ -70,12 +70,21 @@ let modalInicioSesion = () => {
         }
     });
 
-
-
-
-
-
-
 };
 
 modalInicioSesion();
+
+const pillsFiltros = document.querySelector("#pills-filtros");
+let limiteMob = 253;
+
+window.onscroll = function() {
+
+    let scrollMob = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollMob > limiteMob) {
+        pillsFiltros.classList.add("pills-fixed");
+    } else {
+        pillsFiltros.classList.remove("pills-fixed");
+    }
+
+}

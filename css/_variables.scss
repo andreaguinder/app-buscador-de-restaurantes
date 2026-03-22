@@ -30,7 +30,7 @@ $btn-square: rgb(214, 233, 219);
 
     // Body
 
-    --bg-body: url('../img/bg-light-tiny.png') center/cover no-repeat scroll;
+    --bg-body: url('../img/bg-light-grey-5-ty.png') center/cover no-repeat scroll;
 
     // Header & Footer
     --bg-header: url('../img/header-theme-claro-ty.png') top no-repeat;
@@ -47,15 +47,15 @@ $btn-square: rgb(214, 233, 219);
     --botones: #{$dark-pink};
     --botones-bg: #{rgba($pink-light-light, 0.6)};
     --text-botones: #{$black};
-    --btn-square: #{$btn-square};
+    --heart: #{$light-pink-light};
 
     --nombre-usuario: #{rgba($light-pink, 0.45)};
 
     // Cards
 
-    --bg-card: #{rgba($light-pink-light, 0.4)};
+    --bg-card: #{rgba($black, 0.1)};
     --text-card: #{$dark-pink};
-    --bg-card-light: #{rgba($light-pink-light, 0.25)};
+    --bg-card-light: #{rgba($white, 0.8)};
     --bg-dark-pink: #{$dark-pink};
     --border-card: #{$dark-pink};
     --title-card: #{$black};
@@ -86,6 +86,7 @@ $btn-square: rgb(214, 233, 219);
     --botones: #{$white};
     --botones-bg: #{rgba($light-pink, 0.3)};
     --btn-square: #{$black-dark-cards};
+
 
 
         --nombre-usuario: #{rgba($light-pink, 0.6)};

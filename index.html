@@ -58,7 +58,8 @@
 
       <nav id="site__nav" class="site__nav">
         <ul>
-          <li><a href="#mis-favoritos" class="btn-link"><span class="title-favs">Mis favoritos</span><i class="fa-solid fa-heart"></i></a>
+          <li><a href="#mis-favoritos" class="btn-link"><span class="title-favs">Mis favoritos</span><i
+                class="fa-solid fa-heart"></i></a>
           </li>
           <li class="button-login-no"><button id="btn-iniciar-sesion" class="btn active">Iniciar sesión</button></li>
           <li class="button-login-si invisible">hola</li>
@@ -98,7 +99,7 @@
 
 
       <div class="section-filtros">
-        <div class="pills-filtros">
+        <div id="pills-filtros" class="pills-filtros">
           <h2>Descubrí nuestros filtros, seleccioná y combiná<i class="fa-solid fa-filter"></i></h2>
           <div class="filtro">
             <div class="filtros-botones">
@@ -144,53 +145,116 @@
     </section>
 
     <!-- Modal Iniciar Sesión -->
-<section>
-  <div class="modal-container-sesion modal-invisible">
-  <div class="modal-overlay">
-  <div id="modal-inicio-sesion" class="modal-inicio-sesion modal">
-    <p class="title">Iniciar sesión</p>
-    <div class="btn-close"><i class="fa-solid fa-xmark"></i></div>
-    <form id="form-modal-inicio"> <div class="form-group">
-        <label for="usuario">Nombre de usuario</label>
-        <input 
-          type="text" 
-          id="usuario" 
-          name="usuario" 
-          placeholder="Escribí tu nombre..."
-          required
-          value=""
-        />
-      </div>
+    <section>
+      <div class="modal-container-sesion modal-invisible">
+        <div class="modal-overlay">
+          <div id="modal-inicio-sesion" class="modal-inicio-sesion modal">
+            <p class="title">Iniciar sesión</p>
+            <div class="btn-close"><i class="fa-solid fa-xmark"></i></div>
+            <form id="form-modal-inicio">
+              <div class="form-group">
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Escribí tu nombre..." required value="" />
+              </div>
 
-      <div class="form-group password">
-        <label for="password">Contraseña</label>
-        <input 
+              <div class="form-group password">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Escribí tu contraseña..." required
+                  value="" />
+              </div>
+
+              <button id="ingresar" type="submit" class="btn">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div class="separador"></div>
+
+    <section>
+      <div class="container-cards">
+
+        <div class="card">
+          <div class="card-header">
+            <p class="card-title">Restaurante "Macola"</p>
+          </div>
+
+          <div class="card-image">
+            <i class="fa-solid fa-heart"></i>
+            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
+          </div>
+
+          <div class="card-filtros-que-tiene">
+            <div class="filtro-seleccionado">Parrilla / Asado</div>
+            <div class="filtro-seleccionado">Menú Ejecutivo</div>
+          </div>
+
+          <button class="btn">Ver detalles</button>
+        </div>
+
         
-          type="password" 
-          id="password" 
-          name="password" 
-          placeholder="Escribí tu contraseña..."
-          required
-          value=""
-        />
+
+        <div class="card">
+          <div class="card-header">
+            <p class="card-title">Restaurante "Macola"</p>
+          </div>
+
+          <div class="card-image">
+            <i class="fa-solid fa-heart"></i>
+            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
+          </div>
+
+          <div class="card-filtros-que-tiene">
+            <div class="filtro-seleccionado">Parrilla / Asado</div>
+            <div class="filtro-seleccionado">Menú Ejecutivo</div>
+          </div>
+
+          <button class="btn">Ver detalles</button>
+        </div>
+
+        
+
+        <div class="card">
+          <div class="card-header">
+            <p class="card-title">Restaurante "Macola"</p>
+          </div>
+
+          <div class="card-image">
+            <i class="fa-solid fa-heart"></i>
+            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
+          </div>
+
+          <div class="card-filtros-que-tiene">
+            <div class="filtro-seleccionado">Parrilla / Asado</div>
+            <div class="filtro-seleccionado">Menú Ejecutivo</div>
+          </div>
+
+          <button class="btn">Ver detalles</button>
+        </div>
+
+        
+        <div class="card">
+          <div class="card-header">
+            <p class="card-title">Restaurante "Macola"</p>
+          </div>
+
+          <div class="card-image">
+            <i class="fa-solid fa-heart"></i>
+            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
+          </div>
+
+          <div class="card-filtros-que-tiene">
+            <div class="filtro-seleccionado">Parrilla / Asado</div>
+            <div class="filtro-seleccionado">Menú Ejecutivo</div>
+          </div>
+
+          <button class="btn">Ver detalles</button>
+        </div>
+
+
       </div>
-
-      <button id="ingresar" type="submit" class="btn">Ingresar</button>
-    </form>
-  </div>
-  </div>
-  </div>
-</section>
-
-
-
-<section>
-  <div class="container-cards">
-    <div class="card">
-
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
@@ -219,7 +283,7 @@
     <div>
       <p>
         Diseño y Desarrollo por <a href="https://andreaguinder.com/">Andrea
-        Guinder</a> 
+          Guinder</a>
       </p>
       <p class="hidden-xs">-</p>
       <p> Copyright © | <span id="year"></span> Todos los Derechos Reservados</p>
@@ -227,7 +291,7 @@
   </footer>
 
 
-    <!--- JavaScript --->
+  <!--- JavaScript --->
   <script src="js/app.js"></script>
 </body>
 
