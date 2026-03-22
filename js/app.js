@@ -75,6 +75,7 @@ let modalInicioSesion = () => {
 modalInicioSesion();
 
 const pillsFiltros = document.querySelector("#pills-filtros");
+const logoBig = document.querySelector(".logo-big-mob");
 let limiteMob = 253;
 
 window.onscroll = function() {
@@ -83,8 +84,10 @@ window.onscroll = function() {
 
     if (scrollMob > limiteMob) {
         pillsFiltros.classList.add("pills-fixed");
+        logoBig.classList.add("invisible");
     } else {
         pillsFiltros.classList.remove("pills-fixed");
+                logoBig.classList.remove("invisible");
     }
 
 }

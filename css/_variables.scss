@@ -37,7 +37,7 @@ $btn-square: rgb(214, 233, 219);
     --bg-header-footer: #{$dark-pink};
     --line: #{$white};
     --blanco-negro: #{$white};
-
+    --bg-pills: #{rgba($white, 0.95)};
     // Variables generales theme mode
 
     --text-general: #{$black};
@@ -78,6 +78,7 @@ $btn-square: rgb(214, 233, 219);
     --bg-header-footer: #{$dark-pink-dark};
     --line: #{$light-pink};
     --text-botones: #{$black};
+        --bg-pills: #{rgba($bg-dark, 0.9)};
 
     // Variables generales theme mode
 

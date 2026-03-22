@@ -5,6 +5,7 @@
   --bg-header-footer: rgb(5, 75, 24);
   --line: rgb(255, 255, 255);
   --blanco-negro: rgb(255, 255, 255);
+  --bg-pills: rgba(255, 255, 255, 0.95);
   --text-general: rgb(0, 0, 0);
   --accent: rgb(5, 75, 24);
   --title-menu: rgb(0, 0, 0);
@@ -30,6 +31,7 @@
   --bg-header-footer: rgb(1, 36, 10);
   --line: rgb(31, 106, 51);
   --text-botones: rgb(0, 0, 0);
+  --bg-pills: rgba(40, 40, 48, 0.9);
   --text-general: rgb(255, 255, 255);
   --accent: rgb(100, 173, 120);
   --botones: rgb(255, 255, 255);
@@ -47,6 +49,10 @@
   --bg-btn-hover: rgb(31, 106, 51);
 }
 
+.title-filtros {
+  display: none;
+}
+
 .section-filtros {
   display: flex;
   align-items: center;
@@ -56,16 +62,16 @@
   margin: auto;
   gap: 1rem;
 }
-.section-filtros .logo-big {
+.section-filtros .logo-big-mob {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.section-filtros .logo-big img {
+.section-filtros .logo-big-mob img {
   width: 8rem;
 }
-.section-filtros h2 {
+.section-filtros .logo-big-desk {
   display: none;
 }
 .section-filtros .pills-filtros {
@@ -248,7 +254,16 @@
   color: rgb(31, 106, 51);
 }
 
+@media only screen and (min-width: 768px) {
+  .section-filtros .logo-big-mob img {
+    width: 7rem;
+    margin: 2rem auto 0rem;
+  }
+}
 @media only screen and (min-width: 1024px) {
+  .title-filtros {
+    display: block;
+  }
   .section-filtros {
     display: flex;
     align-items: center;
@@ -260,9 +275,6 @@
     top: 0;
     margin-top: 0;
   }
-  .section-filtros h2 {
-    display: block;
-  }
   .section-filtros .pills-filtros {
     display: flex;
     align-items: center;
@@ -270,7 +282,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .section-filtros .pills-filtros .filtro {
     gap: 0.25rem;
@@ -289,9 +302,17 @@
     font-size: 1rem;
     padding: 0rem 0rem 0.25rem;
   }
-  .section-filtros .logo-big img {
+  .section-filtros .logo-big-mob {
+    display: none;
+  }
+  .section-filtros .logo-big-desk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .section-filtros .logo-big-desk img {
     width: 11rem;
-    transform: translateY(10px);
   }
   .mis-favoritos {
     display: flex;
@@ -482,7 +503,7 @@ h2 i {
   position: fixed;
   top: 0;
   z-index: 1000;
-  background: var(--blanco-negro);
+  background: var(--bg-pills);
   padding: 1rem 0rem;
   width: 100%;
 }
@@ -933,6 +954,9 @@ footer p a {
   }
 }
 @media only screen and (min-width: 1024px) {
+  .pills-fixed {
+    padding: 0rem;
+  }
   body {
     margin: 9rem auto 0rem;
   }

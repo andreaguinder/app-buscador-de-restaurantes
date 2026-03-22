@@ -91,7 +91,7 @@ h2 {
     position: fixed;
     top: 0;
     z-index: 1000;
-    background: var(--blanco-negro);
+    background: var(--bg-pills);
     padding: 1rem 0rem;
     width: 100%;
 }
@@ -456,6 +456,7 @@ footer {
 
     // ESTILOS GENERALES TABLET
 
+
     .hidden-xs {
         display: block;
     }
@@ -598,6 +599,11 @@ footer {
 @media only screen and (min-width: 1024px) {
 
     //ESTILOS GENERALES DESKTOP
+
+        .pills-fixed {
+    padding: 0rem;
+}
+
     body {
         margin: 9rem auto 0rem;
     }

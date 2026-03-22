@@ -3,12 +3,17 @@
 
 // Pills filtros
 
+.title-filtros {
+    display: none;
+}
+
 .section-filtros {
     @include flexCenter(column-reverse);
     width: 100%;
     margin: auto;
     gap: 1rem;
-    .logo-big {
+
+    .logo-big-mob {
         @include flexCenter(column);
 
         img {
@@ -16,9 +21,11 @@
         }
     }
 
-    h2 {
+    .logo-big-desk {
         display: none;
     }
+
+
 
     .pills-filtros {
         @include flexCenter(column);
@@ -71,28 +78,28 @@
                 }
 
                 .btn.active {
-                        opacity: 1;
+                    opacity: 1;
+                }
+
+                h3 {
+                    display: block;
+                    font-size: 1rem;
+                    color: var(--text-general);
+
+
+                    flex-wrap: nowrap;
+
+
+                    flex-wrap: nowrap;
+
+                    flex: 0 0 auto;
+                    scroll-snap-align: start;
+                    white-space: nowrap;
+
+                    &:nth-child(2) {
+                        width: 9rem;
                     }
-
-                            h3 {
-                display: block;
-                font-size: 1rem;
-                color: var(--text-general);
-
-
-    flex-wrap: nowrap;
-
-
-    flex-wrap: nowrap;
-
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    white-space: nowrap;
-
-    &:nth-child(2){
-                width: 9rem;
-            }
-            }
+                }
             }
 
         }
@@ -139,7 +146,6 @@
     .pills-filtros {
         @include flexCenter(column);
         gap: 0.5rem;
-
         width: 100%;
 
         .filtro {
@@ -180,25 +186,25 @@
 
                 }
 
-                            h3 {
-                display: block;
-                font-size: 1rem;
-                color: var(--text-general);
+                h3 {
+                    display: block;
+                    font-size: 1rem;
+                    color: var(--text-general);
 
                     padding: 0rem 0rem 0.35rem 1rem;
-    flex-wrap: nowrap;
+                    flex-wrap: nowrap;
 
-        padding: 0rem 0rem 0.35rem 1rem;
-    flex-wrap: nowrap;
+                    padding: 0rem 0rem 0.35rem 1rem;
+                    flex-wrap: nowrap;
 
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    white-space: nowrap;
+                    flex: 0 0 auto;
+                    scroll-snap-align: start;
+                    white-space: nowrap;
 
-    &:nth-child(2){
-                width: 9rem;
-            }
-            }
+                    &:nth-child(2) {
+                        width: 9rem;
+                    }
+                }
             }
 
         }
@@ -240,7 +246,25 @@
 
 }
 
+@media only screen and (min-width: 768px) {
+
+    .section-filtros {
+
+        .logo-big-mob {
+
+            img {
+                width: 7rem;
+                margin: 2rem auto 0rem;
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 1024px) {
+
+    .title-filtros {
+        display: block;
+    }
 
     // Pills filtros
     .section-filtros {
@@ -252,16 +276,15 @@
         margin-top: 0;
 
 
-        h2 {
-            display: block;
-        }
+
 
 
         .pills-filtros {
             @include flexCenter(column);
             align-items: flex-start;
             gap: 1rem;
-            width:100%;
+            width: fit-content;
+
 
             .filtro {
                 gap: 0.25rem;
@@ -279,49 +302,52 @@
                     }
 
 
-                h3 {
-                    font-size: 1rem;
+                    h3 {
+                        font-size: 1rem;
                         padding: 0rem 0rem 0.25rem;
-                }
+                    }
 
                 }
             }
-
-
-
 
         }
 
-        
-            .logo-big {
 
-                img {
-                    width: 11rem;
-                            transform: translateY(10px);
-                }
+        .logo-big-mob {
+            display: none;
+
+        }
+
+        .logo-big-desk {
+            @include flexCenter(column);
+
+            img {
+                width: 11rem;
             }
-        
+        }
     }
 
+
+
     .mis-favoritos {
-            @include flexCenter(column);
-            align-items: flex-start;
-            gap: 2rem;
-            align-items: flex-start;
-            margin: 0rem;
-            max-width: 1551.79px;
+        @include flexCenter(column);
+        align-items: flex-start;
+        gap: 2rem;
+        align-items: flex-start;
+        margin: 0rem;
+        max-width: 1551.79px;
 
-            h2 {
-                margin-left: 5rem;
-            }
-
-            p {
-                font-size: 2rem;
-            }
-
-            i {
-                font-size: 2rem;
-            }
-
+        h2 {
+            margin-left: 5rem;
         }
+
+        p {
+            font-size: 2rem;
+        }
+
+        i {
+            font-size: 2rem;
+        }
+
+    }
 }
