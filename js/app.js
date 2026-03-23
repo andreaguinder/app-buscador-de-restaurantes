@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+// Modal para iniciar sesion
+
 let modalInicioSesion = () => {
 
 
@@ -74,6 +77,9 @@ let modalInicioSesion = () => {
 
 modalInicioSesion();
 
+
+// fuuncion para que sigan mostrando las pills cuando se scrollea
+
 const pillsFiltros = document.querySelector("#pills-filtros");
 const logoBig = document.querySelector(".logo-big-mob");
 let limiteMob = 253;
@@ -91,3 +97,56 @@ window.onscroll = function() {
     }
 
 }
+
+// Modal con tabs mas info para cards
+
+let modalMasInformacion = () => {
+
+
+    let modalMasInformacion = document.querySelector(".modal-mas-informacion");
+    let btnMasDetalles = document.querySelector("#btn-mas-detalles");
+    let btnCloseModalTabs = document.querySelector(".btn-close-tabs");
+    let nombreTabInformacion = document.querySelector(".nombre-tab-informacion");
+    let nombreTabOpiniones = document.querySelector(".nombre-tab-opiniones");
+    let tabInformacion = document.querySelector("#tab-informacion");
+    let tabOpiniones = document.querySelector("#tab-opiniones");
+
+    btnMasDetalles.addEventListener("click", () => {
+
+        // para hacer aparecer el modal cuando se hace click en el boton
+        modalMasInformacion.classList.remove("modal-invisible");
+
+    });
+
+// Para cerrar el modal con la X
+    btnCloseModalTabs.addEventListener("click", () => {
+        modalMasInformacion.classList.add("modal-invisible");
+    });
+
+    // Para que el Tab informacion lleve a la pestaña Informacion
+    nombreTabInformacion.addEventListener("click", () => {
+        tabInformacion.classList.remove("invisible");
+        nombreTabInformacion.classList.add("tab-active");
+        nombreTabOpiniones.classList.remove("tab-active");
+    });
+
+    // Para que el Tab Opiniones lleve a la pestaña Opiniones
+        nombreTabOpiniones.addEventListener("click", () => {
+        tabOpiniones.classList.remove("invisible");
+        tabInformacion.classList.add("invisible");
+        nombreTabOpiniones.classList.add("tab-active");
+        nombreTabInformacion.classList.remove("tab-active");
+    });
+
+    // Para que se invierta cada vez que el usuario toque un tab
+            nombreTabInformacion.addEventListener("click", () => {
+        tabInformacion.classList.remove("invisible");
+        tabOpiniones.classList.add("invisible");
+    });
+
+
+    
+
+};
+
+modalMasInformacion();

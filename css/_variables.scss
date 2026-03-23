@@ -1,6 +1,8 @@
 // VARIABLES
 
 $light-pink: rgb(31, 106, 51);
+$light-green: rgb(55, 153, 81);
+$light-green-light: rgb(85, 135, 98);
 $white: rgb(255, 255, 255);
 $black-light: rgba(18, 19, 24, 0.54);
 $black-dark: rgb(15, 15, 15);
@@ -15,6 +17,7 @@ $font-main: "Inter",
 sans-serif;
 //$pink-light-light: rgb(240, 213, 231);
 $pink-light-light: rgb(150, 194, 162);
+$green-extra-light: rgb(184, 212, 191);
 $btn-square: rgb(214, 233, 219);
 
 @mixin flexCenter ($direct) {
@@ -45,7 +48,7 @@ $btn-square: rgb(214, 233, 219);
     --title-menu: #{$black};
     --font-general: #{$font-main};
     --botones: #{$dark-pink};
-    --botones-bg: #{rgba($pink-light-light, 0.6)};
+    --botones-bg: #{$green-extra-light};
     --text-botones: #{$black};
     --heart: #{$light-pink-light};
 
@@ -59,7 +62,7 @@ $btn-square: rgb(214, 233, 219);
     --bg-dark-pink: #{$dark-pink};
     --border-card: #{$dark-pink};
     --title-card: #{$black};
-    --bg-btn-hover: #{$light-pink};
+    --bg-btn-hover: #{$light-green};
 
 }
 
@@ -85,7 +88,7 @@ $btn-square: rgb(214, 233, 219);
     --text-general: #{$white};
     --accent: #{$light-pink-light};
     --botones: #{$white};
-    --botones-bg: #{rgba($light-pink, 0.3)};
+    --botones-bg: #{$light-green-light};
     --btn-square: #{$black-dark-cards};
 
 
