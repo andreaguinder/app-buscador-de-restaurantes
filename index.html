@@ -58,7 +58,8 @@
 
       <nav id="site__nav" class="site__nav">
         <ul>
-          <li class="mis-favoritos-fantasma"><a href="#mis-favoritos" class="btn btn-link active button-mis-favoritos invisible"><span class="title-favs">Mis favoritos</span><i
+          <li class="mis-favoritos-fantasma"><a href="#mis-favoritos"
+              class="btn btn-link active button-mis-favoritos invisible"><span class="title-favs">Mis favoritos</span><i
                 class="fa-solid fa-heart"></i></a>
           </li>
           <li class="button-login-no"><button id="btn-iniciar-sesion" class="btn active">Iniciar sesión</button></li>
@@ -120,6 +121,8 @@
               <div class="btn">Menú infantil</div>
               <div class="btn">Sin TACC</div>
               <div class="btn">Menú Ejecutivo</div>
+                            <div class="btn">Comida rápida</div>
+              <div class="btn">Menú Completo</div>
             </div>
           </div>
 
@@ -161,8 +164,7 @@
 
               <div class="form-group password">
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Escribí tu contraseña..." 
-                  value="" />
+                <input type="password" id="password" name="password" placeholder="Escribí tu contraseña..." value="" />
               </div>
               <div class="mensaje-error invisible">COMPLETE LOS DATOS</div>
               <button id="ingresar" type="submit" class="btn">Ingresar</button>
@@ -191,71 +193,31 @@
 
             <div id="tab-informacion" class="informacion">
               <p class="title">Contacto y ubicación</p>
-              <p class="telefono"><i class="fa-solid fa-phone"></i>02284 56-6570</p>
-              <p class="direccion"><i class="fa-solid fa-location-dot"></i>Calle Rivadavia 2730, Olavarría B7400CUJ Argentina</p>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.774431526848!2d-60.32557458468798!3d-36.89066607993902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959410972b260959%3A0x8673a010d8a4369e!2sMacola!5e0!3m2!1ses-419!2sar!4v1678888888888!5m2!1ses-419!2sar"
-                width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
+              <p class="telefono"></p>
+              <p class="direccion"></p>
+              <div class="ubicacion"></div>
             </div>
 
             <div id="tab-opiniones" class="opiniones invisible">
 
-<div class="modal-body-opiniones">
-              <div class="opinion">
-                <p class="nombre-opinion">Graciela Pérez</p>
-                <p>estrellas iconos(1/5)</p>
-                <p class="texto-opinion">La carta es súper amplia, y tiene desde minutas hasta platos gourmet. Sin
-                  embargo, no siempre tienen todo lo que ofrecen en el menú. La atención es buena, y los precios son
-                  acordes al producto, que es muy fresco y está muy bien preparado.
-                  La ubicación es muy buena, frente a la plaza del centro.</p>
-              </div>
+              <div class="modal-body-opiniones">
+                <div class="opinion1 opinion">
 
-              <div class="opinion">
-                <p class="nombre-opinion">Graciela Pérez</p>
-                <p>estrellas iconos(1/5)</p>
-                <p class="texto-opinion">La carta es súper amplia, y tiene desde minutas hasta platos gourmet. Sin
-                  embargo, no siempre tienen todo lo que ofrecen en el menú. La atención es buena, y los precios son
-                  acordes al producto, que es muy fresco y está muy bien preparado.
-                  La ubicación es muy buena, frente a la plaza del centro.</p>
-              </div>
+                </div>
 
-              <div class="opinion">
-                <p class="nombre-opinion">Graciela Pérez</p>
-                <p>estrellas iconos(1/5)</p>
-                <p class="texto-opinion">La carta es súper amplia, y tiene desde minutas hasta platos gourmet. Sin
-                  embargo, no siempre tienen todo lo que ofrecen en el menú. La atención es buena, y los precios son
-                  acordes al producto, que es muy fresco y está muy bien preparado.
-                  La ubicación es muy buena, frente a la plaza del centro.</p>
-              </div>
+                <div class="opinion2 opinion">
 
-                            <div class="opinion">
-                <p class="nombre-opinion">Graciela Pérez</p>
-                <p>estrellas iconos(1/5)</p>
-                <p class="texto-opinion">La carta es súper amplia, y tiene desde minutas hasta platos gourmet. Sin
-                  embargo, no siempre tienen todo lo que ofrecen en el menú. La atención es buena, y los precios son
-                  acordes al producto, que es muy fresco y está muy bien preparado.
-                  La ubicación es muy buena, frente a la plaza del centro.</p>
-              </div>
+                </div>
 
-              <div class="opinion">
-                <p class="nombre-opinion">Graciela Pérez</p>
-                <p>estrellas iconos(1/5)</p>
-                <p class="texto-opinion">La carta es súper amplia, y tiene desde minutas hasta platos gourmet. Sin
-                  embargo, no siempre tienen todo lo que ofrecen en el menú. La atención es buena, y los precios son
-                  acordes al producto, que es muy fresco y está muy bien preparado.
-                  La ubicación es muy buena, frente a la plaza del centro.</p>
-              </div>
+                <div class="opinion3 opinion">
 
-              <div class="opinion">
-                <p class="nombre-opinion">Graciela Pérez</p>
-                <p>estrellas iconos(1/5)</p>
-                <p class="texto-opinion">La carta es súper amplia, y tiene desde minutas hasta platos gourmet. Sin
-                  embargo, no siempre tienen todo lo que ofrecen en el menú. La atención es buena, y los precios son
-                  acordes al producto, que es muy fresco y está muy bien preparado.
-                  La ubicación es muy buena, frente a la plaza del centro.</p>
-              </div>
+                </div>
+
+                <div class="opinion4 opinion">
+
+                </div>
+
+
               </div>
             </div>
 
@@ -274,236 +236,7 @@
     <section>
       <div class="container-cards">
 
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
 
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button id="btn-mas-detalles" class="btn">Ver detalles</button>
-        </div>
-
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
-
-
-        <div class="card">
-          <div class="card-header">
-            <p class="card-title">Restaurante "Macola"</p>
-          </div>
-
-          <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
-            <img src="./img/restaurantes-cards/macola.jpg" alt="Restaurante Macola">
-          </div>
-
-          <div class="card-filtros-que-tiene">
-            <div class="filtro-seleccionado">Parrilla / Asado</div>
-            <div class="filtro-seleccionado">Menú Ejecutivo</div>
-          </div>
-
-          <button class="btn">Ver detalles</button>
-        </div>
 
       </div>
     </section>
@@ -544,7 +277,9 @@
 
 
   <!--- JavaScript --->
+  <script src="./js/contenido-cards.js"></script>
   <script src="js/app.js"></script>
+
 </body>
 
 </html>

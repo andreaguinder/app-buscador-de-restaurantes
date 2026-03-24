@@ -47,8 +47,8 @@ let modalInicioSesion = () => {
 
 
 
-let buttonMisFavoritos = document.querySelector (".button-mis-favoritos");
-let sectionMisFavoritos = document.querySelector(".mis-favoritos");
+    let buttonMisFavoritos = document.querySelector(".button-mis-favoritos");
+    let sectionMisFavoritos = document.querySelector(".mis-favoritos");
 
 
 
@@ -78,16 +78,16 @@ let sectionMisFavoritos = document.querySelector(".mis-favoritos");
             buttonLoginSi.innerHTML = `<span class="nombre-usuario btn active">${usuarioNombre}</span>`;
 
 
-    // Muestra Mis favoritos solo si me logueo
+            // Muestra Mis favoritos solo si me logueo
 
             buttonMisFavoritos.classList.remove("invisible");
-    sectionMisFavoritos.classList.remove("invisible");
+            sectionMisFavoritos.classList.remove("invisible");
         } else {
             mensajeError.classList.remove("invisible");
 
             setTimeout(() => {
-            mensajeError.classList.add("invisible");
-        }, 2000); // 3000ms = 3 segundos
+                mensajeError.classList.add("invisible");
+            }, 2000); // 3000ms = 3 segundos
         }
     });
 
@@ -111,7 +111,7 @@ const pillsFiltros = document.querySelector("#pills-filtros");
 const logoBig = document.querySelector(".logo-big-mob");
 let limiteMob = 253;
 
-window.onscroll = function() {
+window.onscroll = function () {
 
     let scrollMob = window.scrollY || document.documentElement.scrollTop;
 
@@ -120,66 +120,62 @@ window.onscroll = function() {
         logoBig.classList.add("invisible");
     } else {
         pillsFiltros.classList.remove("pills-fixed");
-                logoBig.classList.remove("invisible");
+        logoBig.classList.remove("invisible");
     }
 
 }
 
 // Modal con tabs mas info para cards
 
-let modalMasInformacion = () => {
+
+let modalMasInformacionFuncion = () => {
+
+    let modalInformacionDetalles = document.querySelector(".modal-mas-informacion");
 
 
-    let modalMasInformacion = document.querySelector(".modal-mas-informacion");
-    let btnMasDetalles = document.querySelector("#btn-mas-detalles");
     let btnCloseModalTabs = document.querySelector(".btn-close-tabs");
     let nombreTabInformacion = document.querySelector(".nombre-tab-informacion");
     let nombreTabOpiniones = document.querySelector(".nombre-tab-opiniones");
     let tabInformacion = document.querySelector("#tab-informacion");
     let tabOpiniones = document.querySelector("#tab-opiniones");
 
-    btnMasDetalles.addEventListener("click", () => {
 
-        // para hacer aparecer el modal cuando se hace click en el boton
-        modalMasInformacion.classList.remove("modal-invisible");
+    // Para cerrar el modal con la X
+    if (btnCloseModalTabs) {
 
-        // Para cerrar el modal con la X
-    btnCloseModalTabs.addEventListener("click", () => {
-        modalMasInformacion.classList.add("modal-invisible");
-        nombreTabInformacion.classList.add("tab-active");
-        nombreTabOpiniones.classList.remove("tab-active");
-        tabInformacion.classList.remove("invisible");
-        tabOpiniones.classList.add("invisible");
-    });
-
-    // Para que el Tab informacion lleve a la pestaña Informacion
-    nombreTabInformacion.addEventListener("click", () => {
-        tabInformacion.classList.remove("invisible");
-        nombreTabInformacion.classList.add("tab-active");
-        nombreTabOpiniones.classList.remove("tab-active");
-    });
-
-    // Para que el Tab Opiniones lleve a la pestaña Opiniones
-        nombreTabOpiniones.addEventListener("click", () => {
-        tabOpiniones.classList.remove("invisible");
-        tabInformacion.classList.add("invisible");
-        nombreTabOpiniones.classList.add("tab-active");
-        nombreTabInformacion.classList.remove("tab-active");
-    });
-
-    // Para que se invierta cada vez que el usuario toque un tab
-            nombreTabInformacion.addEventListener("click", () => {
-        tabInformacion.classList.remove("invisible");
-        tabOpiniones.classList.add("invisible");
-    });
+        btnCloseModalTabs.addEventListener("click", () => {
+            modalInformacionDetalles.classList.add("modal-invisible");
+            nombreTabInformacion.classList.add("tab-active");
+            nombreTabOpiniones.classList.remove("tab-active");
+            tabInformacion.classList.remove("invisible");
+            tabOpiniones.classList.add("invisible");
+        });
+    }
 
 
-    
-
-    });
+    if (nombreTabInformacion && nombreTabOpiniones) {
 
 
+        // Para que el Tab informacion lleve a la pestaña Informacion
+        nombreTabInformacion.addEventListener("click", (e) => {
+            e.preventDefault();
+            tabInformacion.classList.remove("invisible");
+            tabOpiniones.classList.add("invisible");
+            nombreTabInformacion.classList.add("tab-active");
+            nombreTabOpiniones.classList.remove("tab-active");
+        });
+
+        // Para que el Tab Opiniones lleve a la pestaña Opiniones
+        nombreTabOpiniones.addEventListener("click", (e) => {
+            e.preventDefault();
+            tabOpiniones.classList.remove("invisible");
+            tabInformacion.classList.add("invisible");
+            nombreTabOpiniones.classList.add("tab-active");
+            nombreTabInformacion.classList.remove("tab-active");
+        });
+
+    }
 
 };
 
-modalMasInformacion();
+modalMasInformacionFuncion();

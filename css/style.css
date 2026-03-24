@@ -510,8 +510,12 @@
   font-weight: 300;
   padding-bottom: 0.75rem;
 }
+.modal-mas-informacion .informacion .ubicacion {
+  width: 100%;
+}
 .modal-mas-informacion .informacion i {
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
+  color: var(--accent);
 }
 .modal-mas-informacion .opiniones {
   overflow: hidden;
@@ -535,10 +539,22 @@
   background: var(--accent);
   border-radius: 1rem;
 }
+.modal-mas-informacion .opiniones .modal-body-opiniones .opinion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
 .modal-mas-informacion .opiniones .modal-body-opiniones .opinion .nombre-opinion {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+}
+.modal-mas-informacion .opiniones .modal-body-opiniones .opinion i {
+  font-size: 1.1rem;
+  color: var(--accent);
 }
 
 @media only screen and (min-width: 768px) {
@@ -934,7 +950,7 @@ footer p a {
 .container-cards {
   display: grid;
   grid-template-columns: 1fr;
-  margin: auto;
+  margin: 2rem auto;
   gap: 2rem;
 }
 .container-cards .card {
@@ -944,6 +960,7 @@ footer p a {
   flex-direction: column;
   width: 17.5rem;
   height: auto;
+  min-height: 322px;
   margin: auto;
   gap: 1rem;
   background-color: var(--bg-card-light);
@@ -992,8 +1009,9 @@ footer p a {
   color: var(--bg-btn-hover);
 }
 .container-cards .card .card-image img {
-  width: 98%;
-  height: auto;
+  width: 250px;
+  height: 143px;
+  max-height: 143px;
 }
 .container-cards .card .card-filtros-que-tiene {
   display: flex;

@@ -375,7 +375,7 @@ footer {
 .container-cards {
     display: grid;
     grid-template-columns: 1fr;
-    margin: auto;
+        margin: 2rem auto;
     gap: 2rem;
 
 
@@ -383,6 +383,7 @@ footer {
         @include flexCenter(column);
         width: 17.5rem;
         height: auto;
+        min-height: 322px;
         margin: auto;
         gap: 1rem;
         background-color: var(--bg-card-light);
@@ -428,8 +429,9 @@ footer {
             }
 
             img {
-                width: 98%;
-                height: auto;
+                    width: 250px;
+    height: 143px;
+    max-height: 143px;
             }
         }
 

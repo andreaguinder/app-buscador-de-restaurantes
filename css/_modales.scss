@@ -201,8 +201,13 @@
                 padding-bottom: 0.75rem;
         }
 
+        .ubicacion {
+            width: 100%;
+        }
+
         i {
-            margin-right: 0.5rem;
+            margin-right: 0.25rem;
+            color: var(--accent);
         }
     }
 
@@ -228,10 +233,19 @@
 
     .opinion {
 
+        @include flexCenter(column);
+        align-items: flex-start;
+        gap: 0.25rem;
+
         .nombre-opinion {
                 font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
+        }
+
+        i {
+            font-size: 1.1rem;
+            color: var(--accent);
         }
     }
     }
