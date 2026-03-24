@@ -109,11 +109,18 @@ modalInicioSesion();
 
 const pillsFiltros = document.querySelector("#pills-filtros");
 const logoBig = document.querySelector(".logo-big-mob");
-let limiteMob = 253;
+let limiteMob = 680;
+let limitTablet = 200;
+let limitDesk = 385;
+
+const mediaQueryTablet = window.matchMedia("(min-width: 768px)");
+const mediaQueryDesk = window.matchMedia("(min-width: 1024px)");
+
 
 window.onscroll = function () {
 
-    let scrollMob = window.scrollY || document.documentElement.scrollTop;
+
+        let scrollMob = window.scrollY || document.documentElement.scrollTop;
 
     if (scrollMob > limiteMob) {
         pillsFiltros.classList.add("pills-fixed");
@@ -122,6 +129,38 @@ window.onscroll = function () {
         pillsFiltros.classList.remove("pills-fixed");
         logoBig.classList.remove("invisible");
     }
+
+
+if (mediaQueryTablet.matches) {
+
+    let scrollTablet = window.scrollY || document.documentElement.scrollTop;
+
+if (scrollTablet > limitTablet) {
+        pillsFiltros.classList.add("pills-fixed");
+        logoBig.classList.add("invisible");
+    } else {
+        pillsFiltros.classList.remove("pills-fixed");
+        logoBig.classList.remove("invisible");
+    }
+
+}
+
+
+
+if (mediaQueryDesk.matches) {
+
+    let scrollDesk = window.scrollY || document.documentElement.scrollTop;
+
+if (scrollDesk > limitDesk) {
+        pillsFiltros.classList.add("pills-fixed");
+        logoBig.classList.add("invisible");
+    } else {
+        pillsFiltros.classList.remove("pills-fixed");
+        logoBig.classList.remove("invisible");
+    }
+
+}
+
 
 }
 
