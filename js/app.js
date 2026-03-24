@@ -41,9 +41,15 @@ let modalInicioSesion = () => {
     let btnIniciarSesion = document.querySelector("#btn-iniciar-sesion");
     let btnClose = document.querySelector(".btn-close");
 
-    let btnIngresar = document.querySelector("#ingresar");
     let buttonLoginNo = document.querySelector(".button-login-no");
     let buttonLoginSi = document.querySelector(".button-login-si");
+
+
+
+let buttonMisFavoritos = document.querySelector (".button-mis-favoritos");
+let sectionMisFavoritos = document.querySelector(".mis-favoritos");
+
+
 
     btnIniciarSesion.addEventListener("click", () => {
         modalContainerSesion.classList.remove("modal-invisible");
@@ -68,17 +74,31 @@ let modalInicioSesion = () => {
             modalContainerSesion.classList.add("modal-invisible");
             buttonLoginNo.classList.add("invisible");
             buttonLoginSi.classList.remove("invisible");
-            buttonLoginSi.innerHTML = `<span class="nombre-usuario">${usuarioNombre}</span>`;
+            buttonLoginSi.innerHTML = `<span class="nombre-usuario btn active">${usuarioNombre}</span>`;
 
+
+    // Muestra Mis favoritos solo si me logueo
+
+            buttonMisFavoritos.classList.remove("invisible");
+    sectionMisFavoritos.classList.remove("invisible");
         }
     });
 
-};
+
+
+}
+
+
 
 modalInicioSesion();
 
 
-// fuuncion para que sigan mostrando las pills cuando se scrollea
+
+
+
+
+
+// funcion para que sigan mostrando las pills cuando se scrollea
 
 const pillsFiltros = document.querySelector("#pills-filtros");
 const logoBig = document.querySelector(".logo-big-mob");
@@ -116,11 +136,13 @@ let modalMasInformacion = () => {
         // para hacer aparecer el modal cuando se hace click en el boton
         modalMasInformacion.classList.remove("modal-invisible");
 
-    });
-
-// Para cerrar el modal con la X
+        // Para cerrar el modal con la X
     btnCloseModalTabs.addEventListener("click", () => {
         modalMasInformacion.classList.add("modal-invisible");
+        nombreTabInformacion.classList.add("tab-active");
+        nombreTabOpiniones.classList.remove("tab-active");
+        tabInformacion.classList.remove("invisible");
+        tabOpiniones.classList.add("invisible");
     });
 
     // Para que el Tab informacion lleve a la pestaña Informacion
@@ -146,6 +168,10 @@ let modalMasInformacion = () => {
 
 
     
+
+    });
+
+
 
 };
 

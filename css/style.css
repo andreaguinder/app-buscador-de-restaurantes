@@ -447,6 +447,7 @@
   z-index: 9999999;
   position: relative;
   background-color: var(--blanco-negro);
+  transition: none;
 }
 .nav-tabs-modal-mas-informacion .nombre-tab-informacion,
 .nav-tabs-modal-mas-informacion .nombre-tab-opiniones {
@@ -483,6 +484,9 @@
   color: var(--text-general);
   scrollbar-gutter: stable;
 }
+.modal-mas-informacion .informacion {
+  gap: 0.5rem;
+}
 .modal-mas-informacion .informacion .telefono {
   font-weight: 500;
   line-height: 3rem;
@@ -491,14 +495,22 @@
   font-weight: 300;
   padding-bottom: 0.75rem;
 }
+.modal-mas-informacion .informacion i {
+  margin-right: 0.5rem;
+}
 .modal-mas-informacion .opiniones {
   overflow: hidden;
-  gap: 1.5rem;
 }
 .modal-mas-informacion .opiniones .modal-body-opiniones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   overflow-y: auto;
   flex-grow: 1;
   padding-right: 0.5rem;
+  gap: 1rem;
 }
 .modal-mas-informacion .opiniones .modal-body-opiniones::-webkit-scrollbar {
   width: 6px;
@@ -535,12 +547,15 @@
     max-width: 28rem;
     min-width: 28rem;
   }
+  .modal-mas-informacion .informacion {
+    gap: 0.75rem;
+  }
   .modal-mas-informacion .informacion .telefono {
     line-height: 2rem;
   }
   .modal-mas-informacion .informacion .direccion {
-    margin-top: -0.5rem;
-    line-height: 2.5rem;
+    margin-top: 0cap;
+    line-height: 1rem;
     padding-bottom: 0rem;
   }
   .modal-mas-informacion .modal {
@@ -787,9 +802,6 @@ header .container-nav .theme-switch-wrapper .theme-label i.fa-sun {
   opacity: 1;
   transform: rotate(0deg) scale(1);
 }
-header .container-nav .theme-switch-wrapper .theme-label i.fa-sun:hover {
-  color: var(--bg-btn-hover);
-}
 header .container-nav .theme-switch-wrapper .theme-label i.fa-moon {
   color: var(--text-general);
   opacity: 0;
@@ -810,28 +822,34 @@ header .container-nav .site__nav ul {
   justify-content: center;
   flex-direction: row;
   list-style: none;
-  gap: 2.25rem;
+  gap: 1.5rem;
+}
+header .container-nav .site__nav ul .mis-favoritos-fantasma {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 68px;
+  height: 40px;
+}
+header .container-nav .site__nav ul .mis-favoritos-fantasma i {
+  font-size: 2rem;
 }
 header .container-nav .site__nav ul li .title-favs {
   display: none;
 }
+header .container-nav .site__nav ul li .nombre-usuario {
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  padding: 0.75rem;
+  height: 42.4px;
+}
 header .container-nav .site__nav ul li .btn-link {
-  color: var(--text-botones);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 0rem;
-  text-decoration: none;
-  font-size: 1.75rem;
-  outline: none !important;
-}
-header .container-nav .site__nav ul li .btn-link:hover, header .container-nav .site__nav ul li .btn-link:focus, header .container-nav .site__nav ul li .btn-link.active {
-  background-color: transparent !important;
-  border: none !important;
-  color: var(--accent) !important;
-  font-weight: bold !important;
-  outline: none !important;
+  padding: 1.2rem 1rem;
 }
 header .container-nav .site__nav ul li:last-child {
   border-bottom: none;
@@ -1054,6 +1072,12 @@ footer p a {
     background: transparent;
     width: auto;
   }
+  header .container-nav .site__nav ul .mis-favoritos-fantasma {
+    width: 150px;
+  }
+  header .container-nav .site__nav ul .mis-favoritos-fantasma i {
+    font-size: 1.25rem;
+  }
   header .container-nav .site__nav ul li {
     border: none;
   }
@@ -1063,17 +1087,17 @@ footer p a {
   header .container-nav .site__nav ul li i {
     margin-left: 0.5rem;
   }
+  header .container-nav .site__nav ul li .nombre-usuario {
+    height: 40px;
+  }
   header .container-nav .site__nav ul li .title-favs {
     display: block;
   }
   header .container-nav .site__nav ul li .btn {
     font-size: 1.1rem;
   }
-  header .container-nav .site__nav ul li .btn-link,
-  header .container-nav .site__nav ul li p {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
+  header .container-nav .site__nav ul li .btn-link {
+    width: 180px;
   }
   footer {
     min-height: 4rem;
@@ -1195,12 +1219,6 @@ footer p a {
   header .container-nav .site__nav ul li .btn {
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
-  }
-  header .container-nav .site__nav ul li .btn-link,
-  header .container-nav .site__nav ul li p {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
   }
   .separador {
     margin: 5rem auto 0rem;

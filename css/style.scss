@@ -243,9 +243,6 @@ header {
                         transform: rotate(0deg) scale(1);
                     }
 
-                    &.fa-sun:hover {
-                        color: var(--bg-btn-hover);
-                    }
 
                     &.fa-moon {
                         color: var(--text-general);
@@ -274,7 +271,17 @@ header {
             ul {
                 @include flexCenter(row);
                 list-style: none;
-                gap: 2.25rem;
+                gap: 1.5rem;
+
+                                    .mis-favoritos-fantasma {
+                                        @include flexCenter(column);
+                        width: 68px;
+                        height: 40px;
+
+                        i {
+                            font-size: 2rem;
+                        }
+                    }
 
                 li {
 
@@ -283,23 +290,16 @@ header {
 
                     }
 
-                    .btn-link {
-                        color: var(--text-botones);
-                        @include flexCenter(row);
-                        padding: 0rem;
-                        text-decoration: none;
-                        font-size: 1.75rem;
-                        outline: none !important;
+.nombre-usuario {
+    background-color: transparent;
+        backdrop-filter: blur(5px);
+    padding: 0.75rem;
+    height: 42.4px;
+}
 
-                        &:hover,
-                        &:focus,
-                        &.active {
-                            background-color: transparent !important;
-                            border: none !important;
-                            color: var(--accent) !important;
-                            font-weight: bold !important;
-                            outline: none !important;
-                        }
+                    .btn-link {
+                        @include flexCenter(row);
+                        padding: 1.2rem 1rem;
                     }
                 }
 
@@ -542,6 +542,15 @@ footer {
                     background: transparent;
                     width: auto;
 
+                    
+                                    .mis-favoritos-fantasma {
+                        width: 150px;
+
+                        i {
+                            font-size: 1.25rem;
+                        }
+                    }
+
                     li {
                         border: none;
 
@@ -553,7 +562,9 @@ footer {
                             margin-left: 0.5rem;
                         }
 
-
+.nombre-usuario {
+    height: 40px;
+}
                         .title-favs {
                             display: block;
                         }
@@ -562,11 +573,8 @@ footer {
                             font-size: 1.1rem;
                         }
 
-                        .btn-link,
-                        p {
-                            margin: 0;
-                            font-size: 1.2rem;
-                            font-weight: 700;
+                        .btn-link {
+                                width: 180px;
 
                         }
                     }
@@ -728,12 +736,7 @@ footer {
                             padding: 0.5rem 1rem;
                         }
 
-                        .btn-link,
-                        p {
-                            margin: 0;
-                            font-size: 1.2rem;
-                            font-weight: 700;
-                        }
+
                     }
                 }
             }

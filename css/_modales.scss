@@ -124,6 +124,7 @@
                 z-index: 9999999;
                 position: relative;
                 background-color: var(--blanco-negro);
+                transition: none;
         }
     }
 
@@ -174,6 +175,7 @@
 
         }
     .informacion {
+        gap: 0.5rem;
 
 
         .telefono {
@@ -185,17 +187,22 @@
             font-weight: 300;
                 padding-bottom: 0.75rem;
         }
+
+        i {
+            margin-right: 0.5rem;
+        }
     }
 
     .opiniones {
-        overflow: hidden;
-
-            gap: 1.5rem;
+        overflow: hidden;;
 
     .modal-body-opiniones {
+        @include flexCenter(column);
+        justify-content: flex-start;
         overflow-y: auto;
         flex-grow: 1;
         padding-right: 0.5rem;
+        gap: 1rem;
 
         &::-webkit-scrollbar {
         width: 6px;
@@ -254,14 +261,14 @@
     min-width: 28rem;
 
     .informacion {
-
+        gap: 0.75rem;
             .telefono {
             line-height: 2rem;
     }
 
     .direccion {
-            margin-top: -0.5rem;
-    line-height: 2.5rem;
+            margin-top: 0cap;
+    line-height: 1rem;
     padding-bottom: 0rem;
     }
 
@@ -280,7 +287,7 @@
     }
 
     .opiniones {
-        
+
     }
 }
 
