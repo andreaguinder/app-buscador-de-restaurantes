@@ -90,6 +90,19 @@
         .modal {
         padding: 2rem 2rem 2.5rem;
     }
+
+    .mensaje-error {
+        @include flexCenter(column);
+    background-color: red;
+    color: var(--text-general);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.1rem 0rem 0rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    height: 2.5rem;
+}
 }
 
 .nav-tabs {
@@ -286,9 +299,7 @@
             }
     }
 
-    .opiniones {
 
-    }
 }
 
 .nav-tabs {

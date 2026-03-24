@@ -415,6 +415,21 @@
 .modal-container-sesion .modal {
   padding: 2rem 2rem 2.5rem;
 }
+.modal-container-sesion .mensaje-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: red;
+  color: var(--text-general);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.1rem 0rem 0rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  height: 2.5rem;
+}
 
 .nav-tabs {
   width: 17rem;
@@ -798,11 +813,13 @@ header .container-nav .theme-switch-wrapper .theme-label i {
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 header .container-nav .theme-switch-wrapper .theme-label i.fa-sun {
+  font-size: 2.2rem;
   color: var(--text-general);
   opacity: 1;
   transform: rotate(0deg) scale(1);
 }
 header .container-nav .theme-switch-wrapper .theme-label i.fa-moon {
+  font-size: 2rem;
   color: var(--text-general);
   opacity: 0;
   transform: rotate(-90deg) scale(0);
@@ -829,7 +846,7 @@ header .container-nav .site__nav ul .mis-favoritos-fantasma {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 68px;
+  width: 44px;
   height: 40px;
 }
 header .container-nav .site__nav ul .mis-favoritos-fantasma i {
@@ -843,6 +860,7 @@ header .container-nav .site__nav ul li .nombre-usuario {
   backdrop-filter: blur(5px);
   padding: 0.75rem;
   height: 42.4px;
+  border: 1px solid var(--text-general);
 }
 header .container-nav .site__nav ul li .btn-link {
   display: flex;
@@ -1065,7 +1083,7 @@ footer p a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1.5rem;
     border: none;
     margin: 0;
     padding: 0;
@@ -1073,7 +1091,7 @@ footer p a {
     width: auto;
   }
   header .container-nav .site__nav ul .mis-favoritos-fantasma {
-    width: 150px;
+    width: 180px;
   }
   header .container-nav .site__nav ul .mis-favoritos-fantasma i {
     font-size: 1.25rem;

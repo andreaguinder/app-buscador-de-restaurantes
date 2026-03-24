@@ -238,6 +238,7 @@ header {
                     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
                     &.fa-sun {
+                        font-size: 2.2rem;
                         color: var(--text-general);
                         opacity: 1;
                         transform: rotate(0deg) scale(1);
@@ -245,6 +246,7 @@ header {
 
 
                     &.fa-moon {
+                        font-size: 2rem;
                         color: var(--text-general);
                         opacity: 0;
                         transform: rotate(-90deg) scale(0);
@@ -275,7 +277,7 @@ header {
 
                                     .mis-favoritos-fantasma {
                                         @include flexCenter(column);
-                        width: 68px;
+                        width: 44px;
                         height: 40px;
 
                         i {
@@ -295,6 +297,7 @@ header {
         backdrop-filter: blur(5px);
     padding: 0.75rem;
     height: 42.4px;
+    border: 1px solid var(--text-general)
 }
 
                     .btn-link {
@@ -535,7 +538,7 @@ footer {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    gap: 2.5rem;
+                    gap: 1.5rem;
                     border: none;
                     margin: 0;
                     padding: 0;
@@ -544,7 +547,7 @@ footer {
 
                     
                                     .mis-favoritos-fantasma {
-                        width: 150px;
+                        width: 180px;
 
                         i {
                             font-size: 1.25rem;

@@ -43,6 +43,7 @@ let modalInicioSesion = () => {
 
     let buttonLoginNo = document.querySelector(".button-login-no");
     let buttonLoginSi = document.querySelector(".button-login-si");
+    let mensajeError = document.querySelector(".mensaje-error");
 
 
 
@@ -68,7 +69,7 @@ let sectionMisFavoritos = document.querySelector(".mis-favoritos");
         let usuarioNombre = document.querySelector("#usuario").value;
         let password = document.querySelector("#password").value;
 
-        if (usuarioNombre != "" && password != "") {
+        if (usuarioNombre.length >= 4 && usuarioNombre != "" && password.length >= 4 && password != "") {
 
 
             modalContainerSesion.classList.add("modal-invisible");
@@ -81,6 +82,12 @@ let sectionMisFavoritos = document.querySelector(".mis-favoritos");
 
             buttonMisFavoritos.classList.remove("invisible");
     sectionMisFavoritos.classList.remove("invisible");
+        } else {
+            mensajeError.classList.remove("invisible");
+
+            setTimeout(() => {
+            mensajeError.classList.add("invisible");
+        }, 2000); // 3000ms = 3 segundos
         }
     });
 
