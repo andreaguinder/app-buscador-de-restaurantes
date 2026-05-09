@@ -16,3 +16,13 @@ Proyecto realizado durante el curso de JavaScript Flex de Coderhouse 2026.
 ## 📫 Contacto & Disponibilidad
 
 Soy Frontend Developer. Me encuentro en Olavarría, Buenos Aires, Argentina, con total disponibilidad para trabajo remoto. Estoy en constante aprendizaje y abierta a nuevos desafíos técnicos.
+
+
+
+
+
+USAR UN FETCH CON ASYNC AWAIT PARA LLAMAR AL JSON QUE CONTENGA LOS DATOS DE LOS RESTAURANTES ASI USO JSON Y FETCH Y ASYNC Y AWAIT
+
+CLASE MODULO 8
+
+BOTON DE FAVORITOS, AGREGAR AL LOCAL STORAGE, Y DE AHI LO MUESTRO EN LA SECCION DE FAVORITOS

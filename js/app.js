@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // FOOTER YEAR
+    // Footer año actualizable
 
     const yearSpan = document.getElementById('year');
 
@@ -87,25 +87,18 @@ let modalInicioSesion = () => {
 
             setTimeout(() => {
                 mensajeError.classList.add("invisible");
-            }, 2000); // 3000ms = 3 segundos
+            }, 2000); 
         }
     });
 
-
-
 }
-
-
 
 modalInicioSesion();
 
 
 
 
-
-
-
-// funcion para que sigan mostrando las pills cuando se scrollea
+// Funcion para que sigan mostrando las pills cuando se scrollea
 
 const pillsFiltros = document.querySelector("#pills-filtros");
 const logoBig = document.querySelector(".logo-big-mob");
@@ -164,8 +157,8 @@ if (scrollDesk > limitDesk) {
 
 }
 
-// Modal con tabs mas info para cards
 
+// Modal con tabs mas info para cards
 
 let modalMasInformacionFuncion = () => {
 
@@ -193,7 +186,6 @@ let modalMasInformacionFuncion = () => {
 
 
     if (nombreTabInformacion && nombreTabOpiniones) {
-
 
         // Para que el Tab informacion lleve a la pestaña Informacion
         nombreTabInformacion.addEventListener("click", (e) => {
