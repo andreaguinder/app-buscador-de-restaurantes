@@ -111,6 +111,13 @@
 .section-filtros .pills-filtros .filtro .filtros-botones::-webkit-scrollbar {
   display: none;
 }
+.section-filtros .pills-filtros .filtro .filtros-botones .filtros-separados {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
 .section-filtros .pills-filtros .filtro .filtros-botones .btn {
   flex: 0 0 auto;
   scroll-snap-align: start;
@@ -203,6 +210,9 @@
   .pills-filtros .filtro .filtros-botones::-webkit-scrollbar {
     display: none;
   }
+  .pills-filtros .filtro .filtros-botones .filtros-separados {
+    gap: 0.75rem;
+  }
   .pills-filtros .filtro .filtros-botones .btn {
     flex: 0 0 auto;
     scroll-snap-align: start;
@@ -292,6 +302,9 @@
     overflow-x: visible;
     scroll-snap-type: none;
     padding: 0;
+    gap: 1rem;
+  }
+  .section-filtros .pills-filtros .filtro .filtros-botones .filtros-separados {
     gap: 1rem;
   }
   .section-filtros .pills-filtros .filtro .filtros-botones .btn {
