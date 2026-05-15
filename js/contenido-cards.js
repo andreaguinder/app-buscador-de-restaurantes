@@ -16,11 +16,27 @@ const cargarDatos = async () => {
 
 // Función para crear las cards
 
-const renderizarCards = (lista) => {
+const renderizarCards = (lista, contenedorSeleccionado) => {
         let containerCards = document.querySelector(".container-cards");
+
+        if (contenedorSeleccionado) {
+                containerCards = contenedorSeleccionado;
+        }
+
         containerCards.innerHTML = "";
 
         lista.forEach(card => {
+
+                let claseFavoritoActivo = "";
+    const estaEnFavoritos = arrayFavoritos.some(favorito => favorito.id === card.id);
+    
+    if (estaEnFavoritos) {
+        claseFavoritoActivo = "is-fav";
+        let iFavorito = document.querySelector(".favorito");
+        iFavorito.classList.add(".is-fav");
+    }
+
+
                 containerCards.innerHTML += `
 <div class="card">
           <div class="card-header">
@@ -28,7 +44,9 @@ const renderizarCards = (lista) => {
           </div>
 
           <div class="card-image">
-            <i class="fa-solid fa-heart"></i>
+         <button class="btn-favorito" onclick="agregarFavoritos('${card.id}')">
+                    <i class="favorito fa-solid fa-heart ${claseFavoritoActivo}"></i>
+                </button>
             <img src="${card.image}">
           </div>
 

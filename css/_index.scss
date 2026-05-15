@@ -113,17 +113,9 @@
 
 
 .mis-favoritos {
-    @include flexCenter(column);
-    align-items: flex-start;
-    gap: 2rem;
-    font-size: 2rem;
-    text-decoration: none;
-    font-weight: 400;
-    margin-top: 14rem;
-    min-height: 20rem;
 
     i {
-        color: $light-pink-light;
+        color: $light-green-light;
     }
 
 
@@ -139,10 +131,15 @@
     i {
         transform: scale(1.2);
         transition: 0.25s;
-        color: $light-pink;
+        color: $accent-light-theme;
 
     }
 
+}
+
+i.favorito.is-fav {
+    font-weight: 700;
+    color: $is-fav !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -183,7 +180,7 @@
                     display: none;
                 }
 
-                                .filtros-separados {
+                .filtros-separados {
                     gap: 0.75rem;
                 }
 
@@ -222,17 +219,14 @@
 
 
 .mis-favoritos {
-    @include flexCenter(column);
-    align-items: flex-start;
-    gap: 2rem;
-    font-size: 2rem;
-    text-decoration: none;
-    font-weight: 400;
-    margin-top: 14rem;
-    min-height: 20rem;
+
+
+    h2 {
+        font-size: 1.5rem;
+    }
 
     i {
-        color: $light-pink-light;
+        color: $light-green-light;
     }
 
 
@@ -248,15 +242,26 @@
     i {
         transform: scale(1.2);
         transition: 0.25s;
-        color: $light-pink;
+        color: $accent-light-theme;
 
     }
 
 }
 
+i.favorito.is-fav {
+    font-weight: 700;
+    color: $is-fav !important;
+}
+
 @media only screen and (min-width: 768px) {
 
+    html {
+        min-width: 100vw;
+        overflow-x: hidden;
+    }
+
     .section-filtros {
+        margin: 4rem auto 0rem;
 
         .logo-big-mob {
 
@@ -305,9 +310,9 @@
                     padding: 0;
                     gap: 1rem;
 
-                                    .filtros-separados {
-                    gap: 1rem;
-                }
+                    .filtros-separados {
+                        gap: 1rem;
+                    }
 
                     .btn {
                         scroll-snap-align: none;
@@ -342,15 +347,15 @@
 
 
     .mis-favoritos {
-        @include flexCenter(column);
-        align-items: flex-start;
-        gap: 2rem;
-        align-items: flex-start;
-        margin: 0rem;
-        max-width: 1551.79px;
+        min-width: 1280px;
+        max-width: 1280px;
+        margin: auto;
 
         h2 {
-            margin-left: 5rem;
+            margin-top: 3rem;
+            text-align: left;
+            margin-left: 2rem;
+
         }
 
         p {

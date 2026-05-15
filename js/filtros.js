@@ -2,7 +2,7 @@
 
 const pillsFiltros = document.querySelector("#pills-filtros");
 const logoBig = document.querySelector(".logo-big-mob");
-let limiteMob = 680;
+let limiteMob = 305;
 let limitTablet = 200;
 let limitDesk = 385;
 
@@ -11,52 +11,24 @@ const mediaQueryDesk = window.matchMedia("(min-width: 1024px)");
 
 
 window.onscroll = function () {
+    let scrollActual = window.scrollY || document.documentElement.scrollTop;
+    let limiteActual = limiteMob; 
+
+    if (mediaQueryDesk.matches) {
+        limiteActual = limitDesk;
+    } else if (mediaQueryTablet.matches) {
+        limiteActual = limitTablet;
+    }
 
 
-    let scrollMob = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollMob > limiteMob) {
+    if (scrollActual > limiteActual) {
         pillsFiltros.classList.add("pills-fixed");
         logoBig.classList.add("invisible");
     } else {
         pillsFiltros.classList.remove("pills-fixed");
         logoBig.classList.remove("invisible");
     }
-
-
-    if (mediaQueryTablet.matches) {
-
-        let scrollTablet = window.scrollY || document.documentElement.scrollTop;
-
-        if (scrollTablet > limitTablet) {
-            pillsFiltros.classList.add("pills-fixed");
-            logoBig.classList.add("invisible");
-        } else {
-            pillsFiltros.classList.remove("pills-fixed");
-            logoBig.classList.remove("invisible");
-        }
-
-    }
-
-
-
-    if (mediaQueryDesk.matches) {
-
-        let scrollDesk = window.scrollY || document.documentElement.scrollTop;
-
-        if (scrollDesk > limitDesk) {
-            pillsFiltros.classList.add("pills-fixed");
-            logoBig.classList.add("invisible");
-        } else {
-            pillsFiltros.classList.remove("pills-fixed");
-            logoBig.classList.remove("invisible");
-        }
-
-    }
-
-
-}
-
+};
 
 const estilosDeCocina = ["Todos", "Parrilla / Asado", "Pastas / Trattoria", "Minutas", "Pizzería", "Cafetería / Brunch"];
 const menusEspeciales = ["Todos", "Menú infantil", "Sin TACC", "Menú Ejecutivo", "Comida rápida", "Menú Completo"];
@@ -145,3 +117,33 @@ const aplicarFiltros = () => {
 };
 
 renderizarFiltros();
+
+
+// Funcion para crear seccion Mis favoritos
+
+let arrayFavoritos = [];
+
+const agregarFavoritos = (idBuscado) => {
+
+    const restauranteElegido = todosLosRestaurantes.find(restaurante => restaurante.id === idBuscado);
+const siYaEsFavorito = arrayFavoritos.some(favorito => favorito.id === idBuscado);
+
+    if (siYaEsFavorito) {
+        arrayFavoritos = arrayFavoritos.filter(favorito => favorito.id !== idBuscado);
+    }else {
+        const restauranteElegido = todosLosRestaurantes.find(restaurante => restaurante.id === idBuscado);
+        arrayFavoritos.push(restauranteElegido);
+    }
+
+    renderizarCards(todosLosRestaurantes);
+    renderizarSeccionFavoritos();
+}
+
+const renderizarSeccionFavoritos = () => {
+    const sectionMisFavoritos = document.querySelector(".container-favoritos");
+    
+    renderizarCards(arrayFavoritos, sectionMisFavoritos);
+
+};
+
+

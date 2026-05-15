@@ -1,24 +1,23 @@
 // VARIABLES
 
-$light-pink: rgb(31, 106, 51);
+$is-fav: rgb(218, 72, 128);
+$accent-light-theme: rgb(25, 104, 46);
+$accent-dark-theme: rgb(18, 65, 31);
 $light-green: rgb(55, 153, 81);
-$light-green-light: rgb(85, 135, 98);
+
 $white: rgb(255, 255, 255);
 $black-light: rgba(18, 19, 24, 0.54);
 $black-dark: rgb(15, 15, 15);
 $black: rgb(0, 0, 0);
 $black-dark-cards: rgb(20, 19, 29);
-$light-pink-light: rgb(100, 173, 120);
-$dark-pink: rgb(5, 75, 24);
-$dark-pink-dark: rgb(1, 36, 10);
+$light-green-light: rgb(100, 173, 120);
+
+
 $transparent: rgba(0, 0, 0, 0);
 $bg-dark: rgb(40, 40, 48);
 $font-main: "Inter",
 sans-serif;
-//$pink-light-light: rgb(240, 213, 231);
-$pink-light-light: rgb(150, 194, 162);
 $green-extra-light: rgb(184, 212, 191);
-$btn-square: rgb(214, 233, 219);
 
 @mixin flexCenter ($direct) {
     display: flex;
@@ -37,30 +36,30 @@ $btn-square: rgb(214, 233, 219);
 
     // Header & Footer
     --bg-header: url('../img/header-theme-claro-ty.png') top no-repeat;
-    --bg-header-footer: #{$dark-pink};
+    --bg-header-footer: #{$accent-light-theme};
     --line: #{$white};
     --blanco-negro: #{$white};
     --bg-pills: #{rgba($white, 0.95)};
     // Variables generales theme mode
 
     --text-general: #{$black};
-    --accent: #{$dark-pink};
+
     --title-menu: #{$black};
     --font-general: #{$font-main};
-    --botones: #{$dark-pink};
+
     --botones-bg: #{$green-extra-light};
     --text-botones: #{$black};
-    --heart: #{$light-pink-light};
+    --heart: #{$light-green-light};
 
-    --nombre-usuario: #{rgba($light-pink, 0.45)};
+    --nombre-usuario: #{rgba($accent-light-theme, 0.45)};
 
     // Cards
 
     --bg-card: #{rgba($black, 0.1)};
-    --text-card: #{$dark-pink};
+
     --bg-card-light: #{rgba($white, 0.8)};
-    --bg-dark-pink: #{$dark-pink};
-    --border-card: #{$dark-pink};
+
+
     --title-card: #{$black};
     --bg-btn-hover: #{$light-green};
 
@@ -74,36 +73,36 @@ $btn-square: rgb(214, 233, 219);
     // Body
 
     --bg-body: #{$bg-dark};
-        --blanco-negro: #{$black};
+    --blanco-negro: #{$black};
 
     // Header
     --bg-header: url('../img/header-theme-oscuro-ty.png') top no-repeat;
-    --bg-header-footer: #{$dark-pink-dark};
-    --line: #{$light-pink};
+    --bg-header-footer: #{$accent-dark-theme};
+    --line: #{$accent-light-theme};
     --text-botones: #{$black};
-        --bg-pills: #{rgba($bg-dark, 0.9)};
+    --bg-pills: #{rgba($bg-dark, 0.9)};
 
     // Variables generales theme mode
 
     --text-general: #{$white};
-    --accent: #{$light-pink-light};
+    --accent: #{$light-green-light};
     --botones: #{$white};
     --botones-bg: #{$light-green-light};
     --btn-square: #{$black-dark-cards};
 
 
 
-        --nombre-usuario: #{rgba($light-pink, 0.6)};
+    --nombre-usuario: #{rgba($accent-light-theme, 0.6)};
 
     // Cards
 
     --bg-card: #{$black-dark-cards};
-    --text-card: #{$light-pink};
+    --text-card: #{$accent-light-theme};
     --bg-card-light: #{$black-light};
     --bg-dark-pink: #{$black-dark};
-    --border-card: #{$light-pink};
+    --border-card: #{$accent-light-theme};
     --title-card: #{$white};
-    --title-menu: #{$light-pink};
-        --text-botones: #{$white};
-    --bg-btn-hover: #{$light-pink};
+    --title-menu: #{$accent-light-theme};
+    --text-botones: #{$white};
+    --bg-btn-hover: #{$accent-light-theme};
 }

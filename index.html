@@ -47,14 +47,6 @@
 
   <header id="inicio">
     <div class="container-nav">
-      <div class="buscador">
-        <form action="/buscar" method="GET">
-          <input type="search" id="mi-busqueda" name="q" placeholder="Escribí acá...">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </form>
-      </div>
-
-
 
       <nav id="site__nav" class="site__nav">
         <ul>
@@ -79,22 +71,7 @@
     </div>
   </header>
 
-  <section>
-
-
-    <div class="buscador-mobile">
-      <form action="/buscar" method="GET">
-        <input type="search" id="mi-busqueda" name="q" placeholder="Escribí acá...">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </form>
-    </div>
-  </section>
-
   <main>
-
-    <!--- Intro --->
-
-
 
     <section>
 
@@ -102,44 +79,8 @@
       <div id="pills-filtros" class="section-filtros">
         <div class="pills-filtros">
 
-          <!------
-          <div class="filtro">
-            <div class="filtros-botones">
-              <h3>Estilo de cocina</h3>
-              <div class="btn active">Todos</div>
-              <div class="btn">Parrilla / Asado</div>
-              <div class="btn">Pastas / Trattoria</div>
-              <div class="btn">Minutas</div>
-              <div class="btn">Pizzería</div>
-              <div class="btn">Cafetería / Brunch</div>
-            </div>
-          </div>
+          <!--Se inyectan desde JS-->
 
-          <div class="filtro">
-
-            <div class="filtros-botones">
-              <h3>Menús especiales</h3>
-              <div class="btn active">Todos</div>
-              <div class="btn">Menú infantil</div>
-              <div class="btn">Sin TACC</div>
-              <div class="btn">Menú Ejecutivo</div>
-                            <div class="btn">Comida rápida</div>
-              <div class="btn">Menú Completo</div>
-            </div>
-          </div>
-
-          <div class="filtro">
-
-            <div class="filtros-botones">
-              <h3>Perfil del lugar</h3>
-              <div class="btn active">Todos</div>
-              <div class="btn">Familiar</div>
-              <div class="btn">Pet Friendly</div>
-              <div class="btn">Apto para trabajar</div>
-              <div class="btn">Cervecería / Bar</div>
-            </div>
-          </div>
-        --->
         </div>
 
         <div class="logo-big-desk">
@@ -176,7 +117,7 @@
         </div>
       </div>
     </section>
-    <!-- Termina el MOdal de Inicio de sesión -->
+    <!-- Termina el Modal de Inicio de sesión -->
 
 
     <!-- Modal Ver detalles de cards con tabs -->
@@ -228,7 +169,7 @@
         </div>
       </div>
     </section>
-    <!-- Termina el MOdal ver detalles de cards-->
+    <!-- Termina el Modal ver detalles de cards-->
 
 
 
@@ -239,29 +180,22 @@
     <section>
       <div class="container-cards">
 
-
+        <!--Se inyectan desde JS-->
 
       </div>
     </section>
 
 
 
-
-
-
-
-
-
-
-
-
-
     <section id="mis-favoritos" class="mis-favoritos invisible">
       <div class="separador"></div>
       <h2>Mis favoritos de siempre<i class="fa-solid fa-heart"></i></h2>
+      <div class="container-favoritos">
+
+        <!--Se inyectan desde JS-->
+
+      </div>
     </section>
-
-
 
 
   </main>
@@ -269,12 +203,20 @@
   <!--- Footer --->
   <footer>
     <div>
+      <div>
+      <p class="disclaimer">Aviso: Los filtros y opiniones presentados en este sitio son ficticios y exclusivos de este proyecto. Si bien los datos de contacto y ubicación de los restaurantes son reales, se recomienda no guiarse por los textos o valoraciones aquí expuestos.
+      </p>
+      </div>
+
+      <div class="datos-mios">
       <p>
         Diseño y Desarrollo por <a href="https://andreaguinder.com/">Andrea
           Guinder</a>
       </p>
       <p class="hidden-xs">-</p>
       <p> Copyright © | <span id="year"></span> Todos los Derechos Reservados</p>
+      </div>
+
     </div>
   </footer>
 
