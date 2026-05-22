@@ -4,7 +4,7 @@ let todosLosRestaurantes = [];
 const cargarDatos = async () => {
 
         try {
-                const response = await fetch("../data/data.json");
+                const response = await fetch("./data/data.json");
                 todosLosRestaurantes = await response.json();
                 renderizarCards(todosLosRestaurantes);
         } catch (error) {
