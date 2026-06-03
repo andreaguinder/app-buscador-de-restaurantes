@@ -32,25 +32,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Defino variables
+
+let buttonLoginSiCerrarSesion = document.querySelector(".button-login-si-cerrar-sesion");
+let modalContainerSesion = document.querySelector(".modal-container-sesion");
+let btnIniciarSesion = document.querySelector("#btn-iniciar-sesion");
+let btnClose = document.querySelector(".btn-close");
+
+let buttonLoginNo = document.querySelector(".button-login-no");
+let buttonLoginSi = document.querySelector(".button-login-si");
+let mensajeError = document.querySelector(".mensaje-error");
+
+
+
+let buttonMisFavoritos = document.querySelector(".button-mis-favoritos");
+let sectionMisFavoritos = document.querySelector(".mis-favoritos");
+
+
+
 // Modal para iniciar sesion
 
 let modalInicioSesion = () => {
-
-
-    let modalContainerSesion = document.querySelector(".modal-container-sesion");
-    let btnIniciarSesion = document.querySelector("#btn-iniciar-sesion");
-    let btnClose = document.querySelector(".btn-close");
-
-    let buttonLoginNo = document.querySelector(".button-login-no");
-    let buttonLoginSi = document.querySelector(".button-login-si");
-    let mensajeError = document.querySelector(".mensaje-error");
-
-
-
-    let buttonMisFavoritos = document.querySelector(".button-mis-favoritos");
-    let sectionMisFavoritos = document.querySelector(".mis-favoritos");
-
-
 
     btnIniciarSesion.addEventListener("click", () => {
         modalContainerSesion.classList.remove("modal-invisible");
@@ -75,6 +77,7 @@ let modalInicioSesion = () => {
             modalContainerSesion.classList.add("modal-invisible");
             buttonLoginNo.classList.add("invisible");
             buttonLoginSi.classList.remove("invisible");
+            buttonLoginSiCerrarSesion.classList.remove("invisible");
             buttonLoginSi.innerHTML = `<span class="nombre-usuario btn active">${usuarioNombre}</span>`;
 
 
@@ -82,12 +85,15 @@ let modalInicioSesion = () => {
 
             buttonMisFavoritos.classList.remove("invisible");
             sectionMisFavoritos.classList.remove("invisible");
+            if (typeof loginExitoso === "function") {
+                loginExitoso(usuarioNombre);
+            }
         } else {
             mensajeError.classList.remove("invisible");
 
             setTimeout(() => {
                 mensajeError.classList.add("invisible");
-            }, 2000); 
+            }, 2000);
         }
     });
 
@@ -96,56 +102,69 @@ let modalInicioSesion = () => {
 modalInicioSesion();
 
 
+// Loguearse
 
-// Modal con tabs mas info para cards
+const loginExitoso = (nombreUsuario) => {
 
-let modalMasInformacionFuncion = () => {
+    usuarioLogueado = true;
+    usuarioActual = nombreUsuario;
 
-    let modalInformacionDetalles = document.querySelector(".modal-mas-informacion");
+    localStorage.setItem("usuarioLogueado", "true");
+    localStorage.setItem("usuarioActual", nombreUsuario);
 
-
-    let btnCloseModalTabs = document.querySelector(".btn-close-tabs");
-    let nombreTabInformacion = document.querySelector(".nombre-tab-informacion");
-    let nombreTabOpiniones = document.querySelector(".nombre-tab-opiniones");
-    let tabInformacion = document.querySelector("#tab-informacion");
-    let tabOpiniones = document.querySelector("#tab-opiniones");
-
-
-    // Para cerrar el modal con la X
-    if (btnCloseModalTabs) {
-
-        btnCloseModalTabs.addEventListener("click", () => {
-            modalInformacionDetalles.classList.add("modal-invisible");
-            nombreTabInformacion.classList.add("tab-active");
-            nombreTabOpiniones.classList.remove("tab-active");
-            tabInformacion.classList.remove("invisible");
-            tabOpiniones.classList.add("invisible");
-        });
+    const favoritosGuardados = localStorage.getItem(`favoritos_${nombreUsuario}`);
+    if (favoritosGuardados) {
+        arrayFavoritos = JSON.parse(favoritosGuardados);
+    } else {
+        arrayFavoritos = [];
     }
 
+    document.querySelector(".modal-container-sesion").classList.add("modal-invisible");
 
-    if (nombreTabInformacion && nombreTabOpiniones) {
 
-        // Para que el Tab informacion lleve a la pestaña Informacion
-        nombreTabInformacion.addEventListener("click", (e) => {
-            e.preventDefault();
-            tabInformacion.classList.remove("invisible");
-            tabOpiniones.classList.add("invisible");
-            nombreTabInformacion.classList.add("tab-active");
-            nombreTabOpiniones.classList.remove("tab-active");
-        });
+    const idPendiente = localStorage.getItem("idRestaurantePendiente");
 
-        // Para que el Tab Opiniones lleve a la pestaña Opiniones
-        nombreTabOpiniones.addEventListener("click", (e) => {
-            e.preventDefault();
-            tabOpiniones.classList.remove("invisible");
-            tabInformacion.classList.add("invisible");
-            nombreTabOpiniones.classList.add("tab-active");
-            nombreTabInformacion.classList.remove("tab-active");
-        });
+    if (idPendiente) {
 
+        localStorage.removeItem("idRestaurantePendiente");
+        agregarFavoritos(idPendiente);
+
+    } else {
+
+        renderizarCards(todosLosRestaurantes);
+        renderizarSeccionFavoritos();
     }
 
 };
 
-modalMasInformacionFuncion();
+if (usuarioLogueado && usuarioActual) {
+    const favoritosGuardados = localStorage.getItem(`favoritos_${usuarioActual}`);
+    if (favoritosGuardados) {
+        arrayFavoritos = JSON.parse(favoritosGuardados);
+    }
+
+    setTimeout(() => {
+        renderizarCards(todosLosRestaurantes);
+        renderizarSeccionFavoritos();
+    }, 100);
+}
+
+// Cerrar Sesion
+
+buttonLoginSiCerrarSesion.addEventListener("click", () => {
+
+    buttonLoginNo.classList.remove("invisible");
+    buttonLoginSi.classList.add("invisible");
+    buttonLoginSiCerrarSesion.classList.add("invisible");
+
+    localStorage.removeItem("usuarioLogueado");
+    localStorage.removeItem("usuarioActual");
+
+
+    usuarioLogueado = false;
+    usuarioActual = "";
+    arrayFavoritos = [];
+
+
+    location.reload();
+});

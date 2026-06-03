@@ -122,28 +122,46 @@ renderizarFiltros();
 // Funcion para crear seccion Mis favoritos
 
 let arrayFavoritos = [];
+let usuarioLogueado = localStorage.getItem("usuarioLogueado") === "true";
+let usuarioActual = localStorage.getItem("usuarioActual") || "";
 
 const agregarFavoritos = (idBuscado) => {
 
-    const restauranteElegido = todosLosRestaurantes.find(restaurante => restaurante.id === idBuscado);
-const siYaEsFavorito = arrayFavoritos.some(favorito => favorito.id === idBuscado);
+let modalContainerSesion = document.querySelector(".modal-container-sesion");
+
+if (!usuarioLogueado) {
+        modalContainerSesion.classList.remove("modal-invisible");
+        localStorage.setItem("idRestaurantePendiente", idBuscado);
+        return; 
+    }
+
+    const siYaEsFavorito = arrayFavoritos.some(favorito => favorito.id === idBuscado);
 
     if (siYaEsFavorito) {
         arrayFavoritos = arrayFavoritos.filter(favorito => favorito.id !== idBuscado);
-    }else {
+    } else {
         const restauranteElegido = todosLosRestaurantes.find(restaurante => restaurante.id === idBuscado);
-        arrayFavoritos.push(restauranteElegido);
+        if (restauranteElegido) {
+            arrayFavoritos.push(restauranteElegido);
+        }
     }
 
+    if (usuarioActual) {
+        localStorage.setItem(`favoritos_${usuarioActual}`, JSON.stringify(arrayFavoritos));
+    }
     renderizarCards(todosLosRestaurantes);
     renderizarSeccionFavoritos();
+
 }
 
 const renderizarSeccionFavoritos = () => {
     const sectionMisFavoritos = document.querySelector(".container-favoritos");
     
-    renderizarCards(arrayFavoritos, sectionMisFavoritos);
+    if (sectionMisFavoritos) {
+        renderizarCards(arrayFavoritos, sectionMisFavoritos);
+    }
 
 };
+
 
 

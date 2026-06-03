@@ -28,13 +28,14 @@ const renderizarCards = (lista, contenedorSeleccionado) => {
         lista.forEach(card => {
 
                 let claseFavoritoActivo = "";
-    const estaEnFavoritos = arrayFavoritos.some(favorito => favorito.id === card.id);
-    
-    if (estaEnFavoritos) {
-        claseFavoritoActivo = "is-fav";
-        let iFavorito = document.querySelector(".favorito");
-        iFavorito.classList.add(".is-fav");
-    }
+                const estaEnFavoritos = arrayFavoritos.some(favorito => favorito.id === card.id);
+
+                if (typeof arrayFavoritos !== 'undefined') {
+                        const estaEnFavoritos = arrayFavoritos.some(favorito => favorito.id === card.id);
+                        if (estaEnFavoritos) {
+                                claseFavoritoActivo = "is-fav";
+                        }
+                }
 
 
                 containerCards.innerHTML += `
@@ -62,6 +63,62 @@ const renderizarCards = (lista, contenedorSeleccionado) => {
 };
 
 cargarDatos();
+
+
+
+
+// Modal con tabs mas info para cards
+
+let modalMasInformacionFuncion = () => {
+
+        let modalInformacionDetalles = document.querySelector(".modal-mas-informacion");
+
+
+        let btnCloseModalTabs = document.querySelector(".btn-close-tabs");
+        let nombreTabInformacion = document.querySelector(".nombre-tab-informacion");
+        let nombreTabOpiniones = document.querySelector(".nombre-tab-opiniones");
+        let tabInformacion = document.querySelector("#tab-informacion");
+        let tabOpiniones = document.querySelector("#tab-opiniones");
+
+
+        // Para cerrar el modal con la X
+        if (btnCloseModalTabs) {
+
+                btnCloseModalTabs.addEventListener("click", () => {
+                        modalInformacionDetalles.classList.add("modal-invisible");
+                        nombreTabInformacion.classList.add("tab-active");
+                        nombreTabOpiniones.classList.remove("tab-active");
+                        tabInformacion.classList.remove("invisible");
+                        tabOpiniones.classList.add("invisible");
+                });
+        }
+
+
+        if (nombreTabInformacion && nombreTabOpiniones) {
+
+                // Para que el Tab informacion lleve a la pestaña Informacion
+                nombreTabInformacion.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        tabInformacion.classList.remove("invisible");
+                        tabOpiniones.classList.add("invisible");
+                        nombreTabInformacion.classList.add("tab-active");
+                        nombreTabOpiniones.classList.remove("tab-active");
+                });
+
+                // Para que el Tab Opiniones lleve a la pestaña Opiniones
+                nombreTabOpiniones.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        tabOpiniones.classList.remove("invisible");
+                        tabInformacion.classList.add("invisible");
+                        nombreTabOpiniones.classList.add("tab-active");
+                        nombreTabInformacion.classList.remove("tab-active");
+                });
+
+        }
+
+};
+
+modalMasInformacionFuncion();
 
 
 // funcion para llenar los modales de info contacto + opiniones
@@ -108,18 +165,20 @@ document.addEventListener("click", (e) => {
 });
 
 
+
+
 // Funcion para crear las estrellas de las opiniones
 
 const generarEstrellas = (cantidad) => {
 
-    let estrellasHTML = "";
-    
-    for (let i = 1; i <= 5; i++) {
-        if (i <= cantidad) {
-            estrellasHTML += '<i class="fa-solid fa-star"></i>';
-        } else {
-            estrellasHTML += '<i class="fa-regular fa-star"></i>';
+        let estrellasHTML = "";
+
+        for (let i = 1; i <= 5; i++) {
+                if (i <= cantidad) {
+                        estrellasHTML += '<i class="fa-solid fa-star"></i>';
+                } else {
+                        estrellasHTML += '<i class="fa-regular fa-star"></i>';
+                }
         }
-    }
-    return estrellasHTML;
+        return estrellasHTML;
 };
