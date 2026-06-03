@@ -4,7 +4,13 @@
 // Pills filtros
 
 .title-filtros {
-    display: none;
+
+    font-size: 1rem;
+    color: var(--text-general);
+    text-align: center;
+    font-weight: 700;
+
+
 }
 
 .section-filtros {
@@ -151,6 +157,16 @@ i.favorito.is-fav {
 
 @media only screen and (min-width: 768px) {
 
+    .title-filtros {
+
+    font-size: 1.25rem;
+    color: var(--text-general);
+    text-align: center;
+    font-weight: 700;
+    margin: 6rem auto 1rem;
+
+}
+
     .pills-filtros {
         @include flexCenter(column);
         gap: 0.5rem;
@@ -234,7 +250,7 @@ i.favorito.is-fav {
     }
 
     .section-filtros {
-        margin: 4rem auto 0rem;
+        margin: -2rem auto 0rem;
 
         .logo-big-mob {
 
@@ -249,9 +265,13 @@ i.favorito.is-fav {
 @media only screen and (min-width: 1024px) {
 
     .title-filtros {
-        display: block;
+        font-size: 1.75rem;
+        color: var(--text-general);
+        text-align: center;
+        font-weight: 700;
+        margin: 0rem auto 1rem;
     }
-
+    
     // Pills filtros
     .section-filtros {
         @include flexCenter(row);
