@@ -119,40 +119,61 @@ const aplicarFiltros = () => {
 renderizarFiltros();
 
 
-// Funcion para crear seccion Mis favoritos
+// Funcion para crear seccion Mis favoritos (con librería Toastify implementada)
 
 let arrayFavoritos = [];
 let usuarioLogueado = localStorage.getItem("usuarioLogueado") === "true";
 let usuarioActual = localStorage.getItem("usuarioActual") || "";
 
 const agregarFavoritos = (idBuscado) => {
+    let modalContainerSesion = document.querySelector(".modal-container-sesion");
 
-let modalContainerSesion = document.querySelector(".modal-container-sesion");
-
-if (!usuarioLogueado) {
+    if (!usuarioLogueado) {
         modalContainerSesion.classList.remove("modal-invisible");
         localStorage.setItem("idRestaurantePendiente", idBuscado);
         return; 
     }
 
+
+    const restauranteElegido = todosLosRestaurantes.find(restaurante => restaurante.id === idBuscado);
+    if (!restauranteElegido) return;
+
     const siYaEsFavorito = arrayFavoritos.some(favorito => favorito.id === idBuscado);
 
     if (siYaEsFavorito) {
         arrayFavoritos = arrayFavoritos.filter(favorito => favorito.id !== idBuscado);
+        
+
+        Toastify({
+            text: `Eliminaste "${restauranteElegido.nombre}" de favoritos`,
+            duration: 3000,
+            style: {
+                background: "rgb(218, 72, 128)",
+                marginTop: "4rem"
+            }
+        }).showToast();
+
     } else {
-        const restauranteElegido = todosLosRestaurantes.find(restaurante => restaurante.id === idBuscado);
-        if (restauranteElegido) {
-            arrayFavoritos.push(restauranteElegido);
-        }
+        arrayFavoritos.push(restauranteElegido);
+
+
+        Toastify({
+            text: `Agregaste "${restauranteElegido.nombre}" a favoritos`,
+            duration: 3000,
+            style: {
+                background: "var(--bg-header-footer)",
+                marginTop: "4rem"
+            }
+        }).showToast();
     }
 
     if (usuarioActual) {
         localStorage.setItem(`favoritos_${usuarioActual}`, JSON.stringify(arrayFavoritos));
     }
+    
     renderizarCards(todosLosRestaurantes);
     renderizarSeccionFavoritos();
-
-}
+};
 
 const renderizarSeccionFavoritos = () => {
     const sectionMisFavoritos = document.querySelector(".container-favoritos");
@@ -162,6 +183,7 @@ const renderizarSeccionFavoritos = () => {
     }
 
 };
+
 
 
 

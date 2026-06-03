@@ -3,9 +3,10 @@
 Proyecto realizado durante el curso de JavaScript Flex de Coderhouse 2026.
 
 ## 🛠️ Stack Técnico & Metodología
-* **HTML5 Semántico**: Código estructurado para SEO técnico (etiquetas META) y accesibilidad (WCAG).
+* **HTML5 Semántico**: Código estructurado para SEO técnico (etiquetas META).
 * **SASS (Procesador Avanzado)**: Arquitectura modular con variables dinámicas, mixins, placeholders y anidación prolija.
 * **JavaScript Vanilla**: Lógica propia para la manipulación del DOM y el sistema de temas (Dark/Light Mode).
+* **Toastify JS**: Libreria externa a pedido del proyecto.
 * **Zero Frameworks**: Estilos 100% propios, priorizando la performance y la originalidad visual. No se utilizaron frameworks de CSS (como Bootstrap o Tailwind).
 * **Optimización de Assets**: Imágenes editadas en **Ps/Ai** y comprimidas para una carga ultra-rápida.
 
@@ -17,3 +18,4 @@ Proyecto realizado durante el curso de JavaScript Flex de Coderhouse 2026.
 
 Soy Frontend Developer. Me encuentro en Olavarría, Buenos Aires, Argentina, con total disponibilidad para trabajo remoto. Estoy en constante aprendizaje y abierta a nuevos desafíos técnicos.
 
+### [Conocé mi portfolio](https://andreaguinder.com/)
