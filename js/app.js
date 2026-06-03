@@ -141,30 +141,43 @@ if (usuarioLogueado && usuarioActual) {
     const favoritosGuardados = localStorage.getItem(`favoritos_${usuarioActual}`);
     if (favoritosGuardados) {
         arrayFavoritos = JSON.parse(favoritosGuardados);
+    }else {
+        arrayFavoritos = [];
     }
 
-    setTimeout(() => {
-        renderizarCards(todosLosRestaurantes);
-        renderizarSeccionFavoritos();
-    }, 100);
+}else {
+
+    arrayFavoritos = [];
+    localStorage.removeItem("arrayFavoritos"); 
 }
 
+setTimeout(() => {
+    renderizarCards(todosLosRestaurantes);
+    renderizarSeccionFavoritos();
+}, 100);
+
 // Cerrar Sesion
+
+
 
 buttonLoginSiCerrarSesion.addEventListener("click", () => {
 
     buttonLoginNo.classList.remove("invisible");
     buttonLoginSi.classList.add("invisible");
     buttonLoginSiCerrarSesion.classList.add("invisible");
+buttonMisFavoritos.classList.add("invisible");
+    sectionMisFavoritos.classList.add("invisible");
 
     localStorage.removeItem("usuarioLogueado");
     localStorage.removeItem("usuarioActual");
-
+localStorage.removeItem("idRestaurantePendiente");
 
     usuarioLogueado = false;
     usuarioActual = "";
     arrayFavoritos = [];
 
-
+renderizarCards(todosLosRestaurantes);
+    renderizarSeccionFavoritos();
+    
     location.reload();
 });
