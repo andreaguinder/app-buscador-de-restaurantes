@@ -12,7 +12,6 @@ $black: rgb(0, 0, 0);
 $black-dark-cards: rgb(20, 19, 29);
 $light-green-light: rgb(100, 173, 120);
 
-
 $transparent: rgba(0, 0, 0, 0);
 $bg-dark: rgb(40, 40, 48);
 $font-main: "Inter",
@@ -56,6 +55,8 @@ $green-extra-light: rgb(184, 212, 191);
     --title-card: #{$black};
     --bg-btn-hover: #{$light-green};
 
+    --toastify-agregar: #{$accent-light-theme};
+
 }
 
 
@@ -84,4 +85,6 @@ $green-extra-light: rgb(184, 212, 191);
     --title-menu: #{$accent-light-theme};
     --text-botones: #{$white};
     --bg-btn-hover: #{$accent-light-theme};
+
+    --toastify-agregar: #{$light-green};
 }

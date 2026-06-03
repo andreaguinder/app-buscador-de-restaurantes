@@ -18,6 +18,7 @@
   --bg-card-light: rgba(255, 255, 255, 0.8);
   --title-card: rgb(0, 0, 0);
   --bg-btn-hover: rgb(55, 153, 81);
+  --toastify-agregar: rgb(25, 104, 46);
 }
 
 [data-theme=dark] {
@@ -38,6 +39,7 @@
   --title-menu: rgb(25, 104, 46);
   --text-botones: rgb(255, 255, 255);
   --bg-btn-hover: rgb(25, 104, 46);
+  --toastify-agregar: rgb(55, 153, 81);
 }
 
 .title-filtros {

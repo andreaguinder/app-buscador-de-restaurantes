@@ -149,7 +149,7 @@ const agregarFavoritos = (idBuscado) => {
             duration: 3000,
             style: {
                 background: "rgb(218, 72, 128)",
-                marginTop: "4rem"
+                marginTop: "10rem"
             }
         }).showToast();
 
@@ -161,8 +161,8 @@ const agregarFavoritos = (idBuscado) => {
             text: `Agregaste "${restauranteElegido.nombre}" a favoritos`,
             duration: 3000,
             style: {
-                background: "var(--bg-header-footer)",
-                marginTop: "4rem"
+                background: "var(--toastify-agregar)",
+                marginTop: "10rem"
             }
         }).showToast();
     }
