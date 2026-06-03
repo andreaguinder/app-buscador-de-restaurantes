@@ -14,6 +14,9 @@ Proyecto realizado durante el curso de JavaScript Flex de Coderhouse 2026.
 * **Experiencia Inclusiva**: Dark/Light mode con contraste chequeado, tamaños tipográficos adaptativos, y desarrollo web responsive.
 * **UX Writing**: Textos optimizados y pulidos con herramientas como Wordtune para una comunicación clara y profesional.
 
+## 🛠️ Información del proyecto
+### [Google Slides](https://docs.google.com/presentation/d/1UPbGE85MHwEBtz_9-BKmSGEMrXomlt3DlDy-xQVVR98/edit?slide=id.g25703cb3a7b_0_90#slide=id.g25703cb3a7b_0_90)
+
 ## 📫 Contacto & Disponibilidad
 
 Soy Frontend Developer. Me encuentro en Olavarría, Buenos Aires, Argentina, con total disponibilidad para trabajo remoto. Estoy en constante aprendizaje y abierta a nuevos desafíos técnicos.

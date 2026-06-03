@@ -14,12 +14,12 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); // Color oscuro semitransparente
-    backdrop-filter: blur(4px); // Esto hace el efecto de "vidrio" (esmerilado)
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; // Para que tape hasta el header fixed que tenés
+    z-index: 9999;
 }
 
 .modal {
@@ -174,13 +174,11 @@
 
         .informacion, .opiniones {
         @include flexCenter(column);
-        justify-content: flex-start; // Alinea el contenido arriba
+        justify-content: flex-start; 
         align-items: flex-start;
         width: 100%;
         height: 100%; 
-        flex-grow: 1; // Obliga a ambos a llenar el modal por igual
-        
-        // ACÁ MANEJÁS EL MARGIN Y PADDING UNIFICADO
+        flex-grow: 1;
         padding: 1.5rem; 
         margin: 0; 
                 color: var(--text-general);

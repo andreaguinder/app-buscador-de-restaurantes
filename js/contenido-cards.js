@@ -28,9 +28,7 @@ const renderizarCards = (lista, contenedorSeleccionado) => {
         }
 
         containerCards.innerHTML = "";
-
         lista.forEach(card => {
-
                 let claseFavoritoActivo = "";
                 const estaEnFavoritos = arrayFavoritos.some(favorito => favorito.id === card.id);
 
@@ -41,20 +39,17 @@ const renderizarCards = (lista, contenedorSeleccionado) => {
                         }
                 }
 
-
                 containerCards.innerHTML += `
-<div class="card">
+        <div class="card">
           <div class="card-header">
             <p class="card-title">${card.nombre}</p>
           </div>
-
           <div class="card-image">
-         <button class="btn-favorito" onclick="agregarFavoritos('${card.id}')">
+                <button class="btn-favorito" onclick="agregarFavoritos('${card.id}')">
                     <i class="favorito fa-solid fa-heart ${claseFavoritoActivo}"></i>
                 </button>
-            <img src="${card.image}">
+                <img src="${card.image}">
           </div>
-
           <div class="card-filtros-que-tiene">
           ${card.filtros.map(filtro => `<span class="filtro-seleccionado">${filtro}</span>`).join("")}
           </div>
@@ -63,7 +58,6 @@ const renderizarCards = (lista, contenedorSeleccionado) => {
         </div>
     `;
         });
-
 };
 
 cargarDatos();
@@ -74,20 +68,14 @@ cargarDatos();
 // Modal con tabs mas info para cards
 
 let modalMasInformacionFuncion = () => {
-
         let modalInformacionDetalles = document.querySelector(".modal-mas-informacion");
-
-
         let btnCloseModalTabs = document.querySelector(".btn-close-tabs");
         let nombreTabInformacion = document.querySelector(".nombre-tab-informacion");
         let nombreTabOpiniones = document.querySelector(".nombre-tab-opiniones");
         let tabInformacion = document.querySelector("#tab-informacion");
         let tabOpiniones = document.querySelector("#tab-opiniones");
-
-
         // Para cerrar el modal con la X
         if (btnCloseModalTabs) {
-
                 btnCloseModalTabs.addEventListener("click", () => {
                         modalInformacionDetalles.classList.add("modal-invisible");
                         nombreTabInformacion.classList.add("tab-active");
@@ -96,10 +84,7 @@ let modalMasInformacionFuncion = () => {
                         tabOpiniones.classList.add("invisible");
                 });
         }
-
-
         if (nombreTabInformacion && nombreTabOpiniones) {
-
                 // Para que el Tab informacion lleve a la pestaña Informacion
                 nombreTabInformacion.addEventListener("click", (e) => {
                         e.preventDefault();
@@ -108,7 +93,6 @@ let modalMasInformacionFuncion = () => {
                         nombreTabInformacion.classList.add("tab-active");
                         nombreTabOpiniones.classList.remove("tab-active");
                 });
-
                 // Para que el Tab Opiniones lleve a la pestaña Opiniones
                 nombreTabOpiniones.addEventListener("click", (e) => {
                         e.preventDefault();
@@ -117,11 +101,8 @@ let modalMasInformacionFuncion = () => {
                         nombreTabOpiniones.classList.add("tab-active");
                         nombreTabInformacion.classList.remove("tab-active");
                 });
-
         }
-
 };
-
 modalMasInformacionFuncion();
 
 

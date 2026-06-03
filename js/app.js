@@ -1,3 +1,4 @@
+
 // PREFERENCIA DE SISTEMA
 const savedTheme = localStorage.getItem('theme');
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -7,7 +8,6 @@ if (savedTheme) {
 } else if (systemPrefersDark) {
     document.documentElement.setAttribute('data-theme', 'dark');
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -22,11 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     // Footer año actualizable
 
     const yearSpan = document.getElementById('year');
-
     yearSpan.textContent = new Date().getFullYear();
 
     // --- RENDERIZAR BOTONES SI EL USUARIO YA ESTABA LOGUEADO ---
@@ -63,12 +61,10 @@ let sectionMisFavoritos = document.querySelector(".mis-favoritos");
 
 
 // Modal para iniciar sesion
-
 let modalInicioSesion = () => {
 
     btnIniciarSesion.addEventListener("click", () => {
         modalContainerSesion.classList.remove("modal-invisible");
-
     });
 
     btnClose.addEventListener("click", () => {
@@ -84,17 +80,13 @@ let modalInicioSesion = () => {
         let password = document.querySelector("#password").value;
 
         if (usuarioNombre.length >= 4 && usuarioNombre != "" && password.length >= 4 && password != "") {
-
-
             modalContainerSesion.classList.add("modal-invisible");
             buttonLoginNo.classList.add("invisible");
             buttonLoginSi.classList.remove("invisible");
             buttonLoginSiCerrarSesion.classList.remove("invisible");
             buttonLoginSi.innerHTML = `<span class="nombre-usuario btn active">${usuarioNombre}</span>`;
 
-
             // Muestra Mis favoritos solo si me logueo
-
             buttonMisFavoritos.classList.remove("invisible");
             sectionMisFavoritos.classList.remove("invisible");
             if (typeof loginExitoso === "function") {
@@ -102,15 +94,12 @@ let modalInicioSesion = () => {
             }
         } else {
             mensajeError.classList.remove("invisible");
-
             setTimeout(() => {
                 mensajeError.classList.add("invisible");
             }, 2000);
         }
     });
-
 }
-
 modalInicioSesion();
 
 

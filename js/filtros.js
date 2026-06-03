@@ -1,3 +1,4 @@
+
 // Funcion para que sigan mostrando las pills cuando se scrollea
 
 const pillsFiltros = document.querySelector("#pills-filtros");
@@ -46,7 +47,6 @@ const renderizarFiltros = () => {
     let pillsFiltrosContainer = document.querySelector(".pills-filtros");
 
     pillsFiltrosContainer.innerHTML = "";
-
     const categorias = [{
             titulo: "Estilo de cocina",
             datos: estilosDeCocina
@@ -67,24 +67,20 @@ const renderizarFiltros = () => {
                 <div class="filtros-botones">
                     <h3>${categoria.titulo}</h3>
                         <div class="filtros-separados">
-                            ${categoria.datos.map(nombreFiltro => {
-                                
+                            ${categoria.datos.map(nombreFiltro => {                                
                                 let claseActiva = "";
-
                                 if (filtrosActivos[categoria.titulo] === nombreFiltro) {
                                     claseActiva = "active";
                                 }
-
-                                return ` <button class = "btn ${claseActiva}"onclick = "toggleFiltro('${nombreFiltro}', '${categoria.titulo}')">${nombreFiltro}</button>`
+                                return ` <button class = "btn ${claseActiva}"onclick = "toggleFiltro('${nombreFiltro}',
+                                '${categoria.titulo}')">${nombreFiltro}</button>`
                                 ;}).join("")}
                         </div>
                 </div>
             </div>
         `;
     });
-
 };
-
 renderizarFiltros();
 
 
@@ -146,7 +142,6 @@ const agregarFavoritos = (idBuscado) => {
                 marginTop: "10rem"
             }
         }).showToast();
-
     } else {
         arrayFavoritos.push(restauranteElegido);
 
@@ -164,18 +159,15 @@ const agregarFavoritos = (idBuscado) => {
     if (usuarioActualSeguro) {
         localStorage.setItem(`favoritos_${usuarioActualSeguro}`, JSON.stringify(arrayFavoritos));
     }
-    
     renderizarCards(todosLosRestaurantes);
     renderizarSeccionFavoritos();
 };
 
 const renderizarSeccionFavoritos = () => {
     const sectionMisFavoritos = document.querySelector(".container-favoritos");
-    
     if (sectionMisFavoritos) {
         renderizarCards(arrayFavoritos, sectionMisFavoritos);
     }
-
 };
 
 
