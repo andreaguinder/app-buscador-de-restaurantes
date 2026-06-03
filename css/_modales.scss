@@ -111,7 +111,7 @@
 
     background-color: var(--blanco-negro);
     padding: 1rem;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--title-card);
 }
 .nav-tabs-modal-mas-informacion {
     @include flexCenter(row);
@@ -129,7 +129,7 @@
 
     li {
         a.tab-active {
-            border: 2px solid var(--accent);
+            border: 2px solid var(--title-card);
             border-bottom: 2px solid var(--blanco-negro);
                 border-top-right-radius: 0.75rem;
                 border-top-left-radius: 0.75rem;
@@ -207,7 +207,7 @@
 
         i {
             margin-right: 0.25rem;
-            color: var(--accent);
+            color: var(--title-card);
         }
     }
 
@@ -227,7 +227,7 @@
         background-color: var(--botones-bg);
     }
     &::-webkit-scrollbar-thumb {
-        background: var(--accent);
+        background: var(--title-card);
         border-radius: 1rem;
     }
 
@@ -245,7 +245,7 @@
 
         i {
             font-size: 1.1rem;
-            color: var(--accent);
+            color: var(--title-card);
         }
     }
     }

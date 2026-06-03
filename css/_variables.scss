@@ -30,20 +30,16 @@ $green-extra-light: rgb(184, 212, 191);
 
 :root {
 
-    // Body
-
     --bg-body: url('../img/bg-light-grey-5-ty.png') center/cover no-repeat scroll;
 
-    // Header & Footer
     --bg-header: url('../img/header-theme-claro-ty.png') top no-repeat;
     --bg-header-footer: #{$accent-light-theme};
     --line: #{$white};
     --blanco-negro: #{$white};
     --bg-pills: #{rgba($white, 0.95)};
-    // Variables generales theme mode
 
     --text-general: #{$black};
-
+    --accent: #{$accent-dark-theme};
     --title-menu: #{$black};
     --font-general: #{$font-main};
 
@@ -53,12 +49,9 @@ $green-extra-light: rgb(184, 212, 191);
 
     --nombre-usuario: #{rgba($accent-light-theme, 0.45)};
 
-    // Cards
-
     --bg-card: #{rgba($black, 0.1)};
 
     --bg-card-light: #{rgba($white, 0.8)};
-
 
     --title-card: #{$black};
     --bg-btn-hover: #{$light-green};
@@ -70,37 +63,23 @@ $green-extra-light: rgb(184, 212, 191);
 
 [data-theme="dark"] {
 
-    // Body
-
     --bg-body: #{$bg-dark};
     --blanco-negro: #{$black};
 
-    // Header
     --bg-header: url('../img/header-theme-oscuro-ty.png') top no-repeat;
     --bg-header-footer: #{$accent-dark-theme};
     --line: #{$accent-light-theme};
     --text-botones: #{$black};
     --bg-pills: #{rgba($bg-dark, 0.9)};
 
-    // Variables generales theme mode
-
     --text-general: #{$white};
     --accent: #{$light-green-light};
-    --botones: #{$white};
     --botones-bg: #{$light-green-light};
-    --btn-square: #{$black-dark-cards};
-
-
 
     --nombre-usuario: #{rgba($accent-light-theme, 0.6)};
 
-    // Cards
-
     --bg-card: #{$black-dark-cards};
-    --text-card: #{$accent-light-theme};
     --bg-card-light: #{$black-light};
-    --bg-dark-pink: #{$black-dark};
-    --border-card: #{$accent-light-theme};
     --title-card: #{$white};
     --title-menu: #{$accent-light-theme};
     --text-botones: #{$white};
