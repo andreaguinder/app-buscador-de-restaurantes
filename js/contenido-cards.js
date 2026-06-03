@@ -30,7 +30,7 @@ const renderizarCards = (lista, contenedorSeleccionado) => {
                 let claseFavoritoActivo = "";
                 const estaEnFavoritos = arrayFavoritos.some(favorito => favorito.id === card.id);
 
-                if (typeof arrayFavoritos !== 'undefined') {
+                if (typeof arrayFavoritos !== 'undefined' && arrayFavoritos.length > 0 && localStorage.getItem("usuarioLogueado") === "true") {
                         const estaEnFavoritos = arrayFavoritos.some(favorito => favorito.id === card.id);
                         if (estaEnFavoritos) {
                                 claseFavoritoActivo = "is-fav";

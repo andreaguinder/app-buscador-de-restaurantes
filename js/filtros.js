@@ -121,19 +121,14 @@ renderizarFiltros();
 
 // Funcion para crear seccion Mis favoritos (con librería Toastify implementada)
 
-let arrayFavoritos = [];
-let usuarioLogueado = localStorage.getItem("usuarioLogueado") === "true";
-let usuarioActual = localStorage.getItem("usuarioActual") || "";
-
 const agregarFavoritos = (idBuscado) => {
     let modalContainerSesion = document.querySelector(".modal-container-sesion");
 
-    if (!usuarioLogueado) {
+    if (localStorage.getItem("usuarioLogueado") !== "true") {
         modalContainerSesion.classList.remove("modal-invisible");
         localStorage.setItem("idRestaurantePendiente", idBuscado);
         return; 
     }
-
 
     const restauranteElegido = todosLosRestaurantes.find(restaurante => restaurante.id === idBuscado);
     if (!restauranteElegido) return;
@@ -143,7 +138,6 @@ const agregarFavoritos = (idBuscado) => {
     if (siYaEsFavorito) {
         arrayFavoritos = arrayFavoritos.filter(favorito => favorito.id !== idBuscado);
         
-
         Toastify({
             text: `Eliminaste "${restauranteElegido.nombre}" de favoritos`,
             duration: 3000,
@@ -156,7 +150,6 @@ const agregarFavoritos = (idBuscado) => {
     } else {
         arrayFavoritos.push(restauranteElegido);
 
-
         Toastify({
             text: `Agregaste "${restauranteElegido.nombre}" a favoritos`,
             duration: 3000,
@@ -167,8 +160,9 @@ const agregarFavoritos = (idBuscado) => {
         }).showToast();
     }
 
-    if (usuarioActual) {
-        localStorage.setItem(`favoritos_${usuarioActual}`, JSON.stringify(arrayFavoritos));
+    let usuarioActualSeguro = localStorage.getItem("usuarioActual");
+    if (usuarioActualSeguro) {
+        localStorage.setItem(`favoritos_${usuarioActualSeguro}`, JSON.stringify(arrayFavoritos));
     }
     
     renderizarCards(todosLosRestaurantes);

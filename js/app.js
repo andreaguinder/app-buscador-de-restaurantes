@@ -121,44 +121,36 @@ const loginExitoso = (nombreUsuario) => {
 
     document.querySelector(".modal-container-sesion").classList.add("modal-invisible");
 
-
     const idPendiente = localStorage.getItem("idRestaurantePendiente");
 
     if (idPendiente) {
-
         localStorage.removeItem("idRestaurantePendiente");
         agregarFavoritos(idPendiente);
 
     } else {
-
         renderizarCards(todosLosRestaurantes);
         renderizarSeccionFavoritos();
     }
 
 };
 
-if (usuarioLogueado && usuarioActual) {
+
+if (localStorage.getItem("usuarioLogueado") === "true") {
+    usuarioLogueado = true;
+    usuarioActual = localStorage.getItem("usuarioActual") || "";
     const favoritosGuardados = localStorage.getItem(`favoritos_${usuarioActual}`);
-    if (favoritosGuardados) {
-        arrayFavoritos = JSON.parse(favoritosGuardados);
-    }else {
-        arrayFavoritos = [];
-    }
-
-}else {
-
+    arrayFavoritos = favoritosGuardados ? JSON.parse(favoritosGuardados) : [];
+} else {
+    usuarioLogueado = false;
+    usuarioActual = "";
     arrayFavoritos = [];
-    localStorage.removeItem("arrayFavoritos"); 
+    localStorage.removeItem("usuarioLogueado");
+    localStorage.removeItem("usuarioActual");
+    localStorage.removeItem("arrayFavoritos");
 }
 
-setTimeout(() => {
-    renderizarCards(todosLosRestaurantes);
-    renderizarSeccionFavoritos();
-}, 100);
 
 // Cerrar Sesion
-
-
 
 buttonLoginSiCerrarSesion.addEventListener("click", () => {
 
@@ -170,7 +162,8 @@ buttonMisFavoritos.classList.add("invisible");
 
     localStorage.removeItem("usuarioLogueado");
     localStorage.removeItem("usuarioActual");
-localStorage.removeItem("idRestaurantePendiente");
+    localStorage.removeItem("idRestaurantePendiente");
+    localStorage.removeItem("arrayFavoritos");
 
     usuarioLogueado = false;
     usuarioActual = "";
