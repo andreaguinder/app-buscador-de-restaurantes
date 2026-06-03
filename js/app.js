@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     yearSpan.textContent = new Date().getFullYear();
 
+    // --- RENDERIZAR BOTONES SI EL USUARIO YA ESTABA LOGUEADO ---
+    const storageLogueado = localStorage.getItem("usuarioLogueado") === "true";
+    const storageUsuario = localStorage.getItem("usuarioActual") || "";
+
+    if (storageLogueado && storageUsuario) {
+        buttonLoginNo.classList.add("invisible");
+        buttonLoginSi.classList.remove("invisible");
+        buttonLoginSiCerrarSesion.classList.remove("invisible");
+        buttonLoginSi.innerHTML = `<span class="nombre-usuario btn active">${storageUsuario}</span>`;
+        buttonMisFavoritos.classList.remove("invisible");
+        sectionMisFavoritos.classList.remove("invisible");
+    }
 });
 
 
@@ -135,20 +147,6 @@ const loginExitoso = (nombreUsuario) => {
 };
 
 
-if (localStorage.getItem("usuarioLogueado") === "true") {
-    usuarioLogueado = true;
-    usuarioActual = localStorage.getItem("usuarioActual") || "";
-    const favoritosGuardados = localStorage.getItem(`favoritos_${usuarioActual}`);
-    arrayFavoritos = favoritosGuardados ? JSON.parse(favoritosGuardados) : [];
-} else {
-    usuarioLogueado = false;
-    usuarioActual = "";
-    arrayFavoritos = [];
-    localStorage.removeItem("usuarioLogueado");
-    localStorage.removeItem("usuarioActual");
-    localStorage.removeItem("arrayFavoritos");
-}
-
 
 // Cerrar Sesion
 
@@ -174,3 +172,28 @@ renderizarCards(todosLosRestaurantes);
     
     location.reload();
 });
+
+// CONTROL DE SESIÓN AL RECARGAR LA PÁGINA (Mantiene al usuario adentro si no cerró sesión)
+const storageLogueado = localStorage.getItem("usuarioLogueado") === "true";
+const storageUsuario = localStorage.getItem("usuarioActual") || "";
+
+if (storageLogueado && storageUsuario) {
+    // Si en el storage existía la sesión, la restauramos en las variables globales
+    usuarioLogueado = true;
+    usuarioActual = storageUsuario;
+
+    const favoritosGuardados = localStorage.getItem(`favoritos_${usuarioActual}`);
+    if (favoritosGuardados) {
+        arrayFavoritos = JSON.parse(favoritosGuardados);
+    } else {
+        arrayFavoritos = [];
+    }
+} else {
+    // Si de verdad no hay nadie en el storage, limpiamos todo a cero
+    usuarioLogueado = false;
+    usuarioActual = "";
+    arrayFavoritos = [];
+    localStorage.removeItem("usuarioLogueado");
+    localStorage.removeItem("usuarioActual");
+    localStorage.removeItem("idRestaurantePendiente");
+}

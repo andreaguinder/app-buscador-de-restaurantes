@@ -7,6 +7,10 @@ const cargarDatos = async () => {
                 const response = await fetch("./data/data.json");
                 todosLosRestaurantes = await response.json();
                 renderizarCards(todosLosRestaurantes);
+
+                if (typeof renderizarSeccionFavoritos === "function") {
+                        renderizarSeccionFavoritos();
+                }
         } catch (error) {
                 console.error("Error cargando el JSON", error);
         }
